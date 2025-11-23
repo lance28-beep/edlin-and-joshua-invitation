@@ -84,7 +84,7 @@ export function FAQ() {
   return (
     <Section
       id="faq"
-      className="relative bg-[#DDD3CC] py-10 sm:py-12 md:py-16 lg:py-20 overflow-hidden"
+      className="relative bg-[#FCF8EC] py-10 sm:py-12 md:py-16 lg:py-20 overflow-hidden"
     >
       {/* Enhanced background elements */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -158,11 +158,15 @@ export function FAQ() {
           <div className="w-8 sm:w-12 md:w-16 h-px bg-[#A78256]/40" />
         </div>
         
-        <h2 className="imperial-script-regular text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal text-white mb-2 sm:mb-3 md:mb-4 drop-shadow-lg">
+        <h2 className="imperial-script-regular text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal text-[#A78256] mb-2 sm:mb-3 md:mb-4" style={{
+          textShadow: "0 4px 12px rgba(0, 0, 0, 0.15), 0 2px 6px rgba(167, 130, 86, 0.3)"
+        }}>
           Frequently Asked Questions
         </h2>
         
-        <p className="text-xs sm:text-sm md:text-base lg:text-lg text-white font-light max-w-xl mx-auto leading-relaxed px-2">
+        <p className="text-xs sm:text-sm md:text-base lg:text-lg text-[#B28383] font-light max-w-xl mx-auto leading-relaxed px-2" style={{
+          textShadow: "0 2px 8px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(178, 131, 131, 0.2)"
+        }}>
           Everything you need to know
         </p>
         
@@ -201,7 +205,9 @@ export function FAQ() {
                       aria-expanded={isOpen}
                       aria-controls={contentId}
                     >
-                      <span className="font-semibold text-[#A78256] pr-4 text-sm sm:text-base md:text-lg font-sans leading-relaxed transition-colors duration-200 group-hover:text-[#B28383]">
+                      <span className="font-semibold text-[#A78256] pr-4 text-sm sm:text-base md:text-lg font-sans leading-relaxed transition-colors duration-200 group-hover:text-[#B28383]" style={{
+                        textShadow: "0 2px 6px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(167, 130, 86, 0.2)"
+                      }}>
                         {item.question}
                       </span>
                       <ChevronDown

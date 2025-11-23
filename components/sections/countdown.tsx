@@ -104,7 +104,9 @@ export function Countdown() {
       </div>
 
       {/* Label - elegant with better contrast */}
-      <span className="text-[10px] sm:text-[11px] md:text-xs lg:text-sm font-semibold text-[#A78256] uppercase tracking-[0.15em] drop-shadow-sm">
+      <span className="text-[10px] sm:text-[11px] md:text-xs lg:text-sm font-semibold text-[#A78256] uppercase tracking-[0.15em]" style={{
+        textShadow: "0 2px 6px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(167, 130, 86, 0.3)"
+      }}>
         {label}
       </span>
     </div>
@@ -113,8 +115,19 @@ export function Countdown() {
   return (
     <Section
       id="countdown"
-      className="relative bg-[#DDD3CC] py-10 sm:py-12 md:py-16 lg:py-20 overflow-hidden"
+      className="relative py-10 sm:py-12 md:py-16 lg:py-20 overflow-hidden"
     >
+      {/* Background image */}
+      <div className="absolute inset-0 pointer-events-none">
+        <Image
+          src="/decoration/backgroudcountdown.png"
+          alt=""
+          fill
+          className="object-cover"
+          priority={false}
+        />
+      </div>
+
       {/* Enhanced background elements */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Soft gradient overlays */}
@@ -176,144 +189,168 @@ export function Countdown() {
         <div className="absolute top-1/2 left-0 w-full h-px bg-[#A78256]/20" />
       </div>
 
-      {/* Monogram - centered at top */}
-      <div className="relative flex justify-center pt-8 sm:pt-10 md:pt-12 mb-6 sm:mb-8 md:mb-10 z-10">
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          className="relative"
-        >
-          <Image
-            src="/Couple_img/monogram.png"
-            alt="Jay & Cha Monogram"
-            width={350}
-            height={350}
-            className="w-40 h-40 sm:w-52 sm:h-52 md:w-64 md:h-64 lg:w-80 lg:h-80 xl:w-96 xl:h-96 opacity-90"
-            style={{
-              filter: 'invert(54%) sepia(18%) saturate(945%) hue-rotate(357deg) brightness(92%) contrast(87%)'
-            }}
-            priority={false}
-          />
-          {/* Glow effect behind monogram */}
-          <div className="absolute inset-0 blur-3xl bg-[#A78256]/25 -z-10 scale-125" />
-        </motion.div>
-      </div>
+      {/* Content container - paper card effect with subtle top transparency */}
+      <div className="relative z-10 mx-auto max-w-6xl px-3 sm:px-4 md:px-6">
+        {/* Paper-like card with subtle top transparency */}
+        <div className="relative bg-gradient-to-b from-[#FAF8F5]/85 via-[#FCFBF8]/95 to-[#FEFDFB]/98 rounded-lg sm:rounded-xl md:rounded-2xl shadow-2xl border border-[#E8E0D6]/40">
+          {/* Subtle top transparency gradient overlay */}
+          <div className="absolute top-0 left-0 right-0 h-24 sm:h-32 md:h-40 bg-gradient-to-b from-transparent via-[#FAF8F5]/20 to-transparent pointer-events-none rounded-t-lg sm:rounded-t-xl md:rounded-t-2xl" />
+          
+          {/* Content padding */}
+          <div className="relative py-8 sm:py-10 md:py-12 lg:py-16 px-4 sm:px-6 md:px-8">
 
-      {/* Header */}
-      <div className="relative z-10 text-center mb-6 sm:mb-8 md:mb-10 px-3 sm:px-4">
-        {/* Decorative element above title */}
-        <div className="flex items-center justify-center gap-2 mb-3 sm:mb-4">
-          <div className="w-8 sm:w-12 md:w-16 h-px bg-[#A78256]/40" />
-          <div className="w-1.5 h-1.5 bg-[#B28383]/60 rounded-full" />
-          <div className="w-1.5 h-1.5 bg-[#C2D3C3]/60 rounded-full" />
-          <div className="w-1.5 h-1.5 bg-[#B28383]/60 rounded-full" />
-          <div className="w-8 sm:w-12 md:w-16 h-px bg-[#A78256]/40" />
-        </div>
-        
-        <h2 className="imperial-script-regular text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal text-[#A78256] mb-2 sm:mb-3 md:mb-4 drop-shadow-lg">
-          Countdown to Our Special Day
-        </h2>
-        
-        <p className="text-xs sm:text-sm md:text-base lg:text-lg text-[#B28383] font-light max-w-xl mx-auto leading-relaxed px-2">
-          Every moment brings us closer to forever
-        </p>
-        
-        {/* Decorative element below subtitle */}
-        <div className="flex items-center justify-center gap-2 mt-3 sm:mt-4">
-          <div className="w-1.5 h-1.5 bg-[#B28383]/60 rounded-full" />
-          <div className="w-1.5 h-1.5 bg-[#C2D3C3]/60 rounded-full" />
-          <div className="w-1.5 h-1.5 bg-[#B28383]/60 rounded-full" />
-        </div>
-      </div>
+            {/* Monogram - centered at top */}
+            <div className="relative flex justify-center mb-6 sm:mb-8 md:mb-10">
+              <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, ease: "easeOut" }}
+                className="relative"
+              >
+                <Image
+                  src="/invitation/newMonogram.png"
+                  alt="Jay & Cha Monogram"
+                  width={350}
+                  height={350}
+                  className="w-40 h-40 sm:w-52 sm:h-52 md:w-64 md:h-64 lg:w-80 lg:h-80 xl:w-96 xl:h-96 opacity-90"
+                  style={{
+                    filter: 'invert(54%) sepia(18%) saturate(945%) hue-rotate(357deg) brightness(92%) contrast(87%)'
+                  }}
+                  priority={false}
+                />
+                {/* Glow effect behind monogram */}
+                <div className="absolute inset-0 blur-3xl bg-[#A78256]/25 -z-10 scale-125" />
+              </motion.div>
+            </div>
 
-      {/* Countdown Timer - Elegant */}
-      <div className="relative z-10 mb-7 sm:mb-9 md:mb-11 px-3 sm:px-4">
-        <div className="flex justify-center items-center gap-2 sm:gap-2.5 md:gap-3.5 lg:gap-5 flex-wrap max-w-4xl mx-auto">
-          <CountdownUnit value={timeLeft.days} label="Days" />
-          <CountdownUnit value={timeLeft.hours} label="Hours" />
-          <CountdownUnit value={timeLeft.minutes} label="Minutes" />
-          <CountdownUnit value={timeLeft.seconds} label="Seconds" />
-        </div>
-      </div>
-
-      {/* Save The Date Card */}
-      <div className="relative z-10">
-        <div className="flex justify-center px-3 sm:px-4">
-          <div className="max-w-2xl w-full">
-            {/* Save The Date Header */}
-            <div className="text-center mb-6 sm:mb-8 md:mb-10">
-              {/* Decorative divider */}
-              <div className="flex items-center justify-center gap-2 sm:gap-3 mb-3 sm:mb-4">
-                <div className="flex items-center gap-1.5">
-                  <div className="w-1 h-1 bg-[#B28383]/70 rounded-full" />
-                  <div className="w-1.5 h-1.5 bg-[#A78256]/90 rounded-full" />
-                  <div className="w-1 h-1 bg-[#B28383]/70 rounded-full" />
-                </div>
+            {/* Header */}
+            <div className="relative text-center mb-6 sm:mb-8 md:mb-10">
+              {/* Decorative element above title */}
+              <div className="flex items-center justify-center gap-2 mb-3 sm:mb-4">
+                <div className="w-8 sm:w-12 md:w-16 h-px bg-[#A78256]/40" />
+                <div className="w-1.5 h-1.5 bg-[#B28383]/60 rounded-full" />
+                <div className="w-1.5 h-1.5 bg-[#C2D3C3]/60 rounded-full" />
+                <div className="w-1.5 h-1.5 bg-[#B28383]/60 rounded-full" />
+                <div className="w-8 sm:w-12 md:w-16 h-px bg-[#A78256]/40" />
               </div>
               
-              {/* Save The Date text */}
-              <p className="text-xs sm:text-sm md:text-base lg:text-lg font-sans font-semibold text-[#A78256] uppercase tracking-[0.25em] sm:tracking-[0.35em] mb-3 sm:mb-4 drop-shadow-md">
-                Save The Date
+              <h2 className="imperial-script-regular text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal text-[#A78256] mb-2 sm:mb-3 md:mb-4" style={{
+                textShadow: "0 4px 12px rgba(0, 0, 0, 0.15), 0 2px 6px rgba(167, 130, 86, 0.3)"
+              }}>
+                Countdown to Our Special Day
+              </h2>
+              
+              <p className="text-xs sm:text-sm md:text-base lg:text-lg text-[#B28383] font-light max-w-xl mx-auto leading-relaxed px-2" style={{
+                textShadow: "0 2px 8px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(178, 131, 131, 0.2)"
+              }}>
+                Every moment brings us closer to forever
               </p>
               
-              {/* Bottom decorative divider */}
-              <div className="flex items-center justify-center gap-1.5">
-                <div className="w-1 h-1 bg-[#B28383]/70 rounded-full" />
-                <div className="w-1.5 h-1.5 bg-[#A78256]/90 rounded-full" />
-                <div className="w-1 h-1 bg-[#B28383]/70 rounded-full" />
+              {/* Decorative element below subtitle */}
+              <div className="flex items-center justify-center gap-2 mt-3 sm:mt-4">
+                <div className="w-1.5 h-1.5 bg-[#B28383]/60 rounded-full" />
+                <div className="w-1.5 h-1.5 bg-[#C2D3C3]/60 rounded-full" />
+                <div className="w-1.5 h-1.5 bg-[#B28383]/60 rounded-full" />
               </div>
             </div>
 
-            {/* Date Section - Elegant Layout with decorative card */}
-            <div className="relative sm:rounded-3xl p-6 sm:p-8 md:p-10 mb-6 sm:mb-8">
-              <div className="text-center">
-                {/* Month - Elegant script style */}
-                <div className="mb-5 sm:mb-6 md:mb-8">
-                  <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif italic text-[#B28383] leading-none drop-shadow-lg" style={{
-                    fontFamily: "var(--font-serif)",
-                    fontStyle: "italic",
-                    fontWeight: 300
-                  }}>
-                    {ceremonyMonth}
-                  </p>
-                </div>
-                
-                {/* Day and Year - Horizontal layout with divider */}
-                <div className="flex items-center justify-center gap-4 sm:gap-5 md:gap-7 mb-5 sm:mb-6 md:mb-8">
-                   {/* Day - Large and bold focal point */}
-                   <p className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[10rem] font-serif font-bold text-[#A78256] leading-none" style={{
-                     textShadow: "0 6px 24px rgba(167, 130, 86, 0.4), 0 2px 8px rgba(178, 131, 131, 0.3)"
-                   }}>
-                     {ceremonyDayNumber.padStart(2, "0")}
-                   </p>
-                  
-                   {/* Elegant vertical divider */}
-                   <div className="relative h-14 sm:h-16 md:h-20 lg:h-24 flex flex-col items-center justify-center gap-2">
-                     <div className="w-1.5 h-1.5 bg-[#B28383]/70 rounded-full" />
-                     <div className="flex-1 w-px bg-gradient-to-b from-[#B28383]/60 via-[#A78256]/90 to-[#B28383]/60" />
-                     <div className="w-1.5 h-1.5 bg-[#B28383]/70 rounded-full" />
-                   </div>
-                  
-                  {/* Year - Elegant and refined */}
-                  <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-light text-[#B28383] leading-none drop-shadow-md">
-                    {ceremonyYear}
-                  </p>
-                </div>
-                
-                {/* Time Section with decorative frame */}
-                <div className="relative pt-4 sm:pt-5 border-t border-[#A78256]/30">
-                   {/* Decorative element above time */}
-                   <div className="flex items-center justify-center gap-2 mb-3 sm:mb-4">
-                     <div className="w-1 h-1 bg-[#B28383]/70 rounded-full" />
-                     <div className="w-1.5 h-1.5 bg-[#A78256]/90 rounded-full" />
-                     <div className="w-1 h-1 bg-[#B28383]/70 rounded-full" />
-                   </div>
-                   
-                   {/* Time */}
-                   <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-sans font-semibold text-[#A78256] tracking-wider drop-shadow-md">
-                     {ceremonyTimeDisplay}
-                   </p>
+            {/* Countdown Timer - Elegant */}
+            <div className="relative mb-7 sm:mb-9 md:mb-11">
+              <div className="flex justify-center items-center gap-2 sm:gap-2.5 md:gap-3.5 lg:gap-5 flex-wrap max-w-4xl mx-auto">
+                <CountdownUnit value={timeLeft.days} label="Days" />
+                <CountdownUnit value={timeLeft.hours} label="Hours" />
+                <CountdownUnit value={timeLeft.minutes} label="Minutes" />
+                <CountdownUnit value={timeLeft.seconds} label="Seconds" />
+              </div>
+            </div>
+
+            {/* Save The Date Card */}
+            <div className="relative">
+              <div className="flex justify-center">
+                <div className="max-w-2xl w-full">
+                  {/* Save The Date Header */}
+                  <div className="text-center mb-6 sm:mb-8 md:mb-10">
+                    {/* Decorative divider */}
+                    <div className="flex items-center justify-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                      <div className="flex items-center gap-1.5">
+                        <div className="w-1 h-1 bg-[#B28383]/70 rounded-full" />
+                        <div className="w-1.5 h-1.5 bg-[#A78256]/90 rounded-full" />
+                        <div className="w-1 h-1 bg-[#B28383]/70 rounded-full" />
+                      </div>
+                    </div>
+                    
+                    {/* Save The Date text */}
+                    <p className="text-xs sm:text-sm md:text-base lg:text-lg font-sans font-semibold text-[#A78256] uppercase tracking-[0.25em] sm:tracking-[0.35em] mb-3 sm:mb-4" style={{
+                      textShadow: "0 2px 8px rgba(0, 0, 0, 0.15), 0 1px 4px rgba(167, 130, 86, 0.3)"
+                    }}>
+                      Save The Date
+                    </p>
+                    
+                    {/* Bottom decorative divider */}
+                    <div className="flex items-center justify-center gap-1.5">
+                      <div className="w-1 h-1 bg-[#B28383]/70 rounded-full" />
+                      <div className="w-1.5 h-1.5 bg-[#A78256]/90 rounded-full" />
+                      <div className="w-1 h-1 bg-[#B28383]/70 rounded-full" />
+                    </div>
+                  </div>
+
+                  {/* Date Section - Elegant Layout with decorative card */}
+                  <div className="relative sm:rounded-3xl p-6 sm:p-8 md:p-10 mb-6 sm:mb-8">
+                    <div className="text-center">
+                      {/* Month - Elegant script style */}
+                      <div className="mb-5 sm:mb-6 md:mb-8">
+                        <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif italic text-[#B28383] leading-none" style={{
+                          fontFamily: "var(--font-serif)",
+                          fontStyle: "italic",
+                          fontWeight: 300,
+                          textShadow: "0 3px 10px rgba(0, 0, 0, 0.15), 0 1px 4px rgba(178, 131, 131, 0.3)"
+                        }}>
+                          {ceremonyMonth}
+                        </p>
+                      </div>
+                      
+                      {/* Day and Year - Horizontal layout with divider */}
+                      <div className="flex items-center justify-center gap-4 sm:gap-5 md:gap-7 mb-5 sm:mb-6 md:mb-8">
+                         {/* Day - Large and bold focal point */}
+                         <p className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[10rem] font-serif font-bold text-[#A78256] leading-none" style={{
+                           textShadow: "0 6px 24px rgba(0, 0, 0, 0.2), 0 2px 8px rgba(167, 130, 86, 0.4), 0 1px 4px rgba(178, 131, 131, 0.3)"
+                         }}>
+                           {ceremonyDayNumber.padStart(2, "0")}
+                         </p>
+                        
+                         {/* Elegant vertical divider */}
+                         <div className="relative h-14 sm:h-16 md:h-20 lg:h-24 flex flex-col items-center justify-center gap-2">
+                           <div className="w-1.5 h-1.5 bg-[#B28383]/70 rounded-full" />
+                           <div className="flex-1 w-px bg-gradient-to-b from-[#B28383]/60 via-[#A78256]/90 to-[#B28383]/60" />
+                           <div className="w-1.5 h-1.5 bg-[#B28383]/70 rounded-full" />
+                         </div>
+                        
+                        {/* Year - Elegant and refined */}
+                        <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-light text-[#B28383] leading-none" style={{
+                          textShadow: "0 3px 10px rgba(0, 0, 0, 0.15), 0 1px 4px rgba(178, 131, 131, 0.3)"
+                        }}>
+                          {ceremonyYear}
+                        </p>
+                      </div>
+                      
+                      {/* Time Section with decorative frame */}
+                      <div className="relative pt-4 sm:pt-5 border-t border-[#A78256]/30">
+                         {/* Decorative element above time */}
+                         <div className="flex items-center justify-center gap-2 mb-3 sm:mb-4">
+                           <div className="w-1 h-1 bg-[#B28383]/70 rounded-full" />
+                           <div className="w-1.5 h-1.5 bg-[#A78256]/90 rounded-full" />
+                           <div className="w-1 h-1 bg-[#B28383]/70 rounded-full" />
+                         </div>
+                         
+                         {/* Time */}
+                         <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-sans font-semibold text-[#A78256] tracking-wider" style={{
+                           textShadow: "0 2px 8px rgba(0, 0, 0, 0.15), 0 1px 4px rgba(167, 130, 86, 0.3)"
+                         }}>
+                           {ceremonyTimeDisplay}
+                         </p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

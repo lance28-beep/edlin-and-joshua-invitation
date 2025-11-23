@@ -87,7 +87,7 @@ export function BookOfGuests() {
   return (
     <div 
       id="guests" 
-      className="relative z-10 bg-[#DDD3CC] py-6 sm:py-12 md:py-16 lg:py-20 overflow-hidden isolate"
+      className="relative z-10 bg-[#FCF8EC] py-6 sm:py-12 md:py-16 lg:py-20 overflow-hidden isolate"
     >
       {/* Enhanced background elements - matching countdown section */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -161,11 +161,15 @@ export function BookOfGuests() {
           <div className="w-6 sm:w-8 md:w-12 h-px bg-[#A78256]/40" />
         </div>
         
-        <h2 className="imperial-script-regular text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-normal text-[#A78256] mb-1 sm:mb-2 drop-shadow-lg">
+        <h2 className="imperial-script-regular text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-normal text-[#A78256] mb-1 sm:mb-2" style={{
+          textShadow: "0 4px 12px rgba(0, 0, 0, 0.15), 0 2px 6px rgba(167, 130, 86, 0.3)"
+        }}>
           Book of Guests
         </h2>
         
-        <p className="text-[10px] sm:text-xs md:text-sm text-[#B28383] font-light max-w-xl mx-auto leading-snug px-2">
+        <p className="text-[10px] sm:text-xs md:text-sm text-[#B28383] font-light max-w-xl mx-auto leading-snug px-2" style={{
+          textShadow: "0 2px 8px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(178, 131, 131, 0.2)"
+        }}>
           See who's celebrating with us on our special day
         </p>
         

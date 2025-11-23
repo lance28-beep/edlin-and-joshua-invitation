@@ -92,7 +92,7 @@ export function Gallery() {
   return (
     <Section
       id="gallery"
-      className="relative bg-[#DDD3CC] py-10 sm:py-12 md:py-16 lg:py-20 overflow-hidden"
+      className="relative bg-[#FCF8EC] py-10 sm:py-12 md:py-16 lg:py-20 overflow-hidden"
     >
       {/* Background elements */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -151,11 +151,15 @@ export function Gallery() {
 
       {/* Header */}
       <div className="relative z-10 text-center mb-8 sm:mb-10 md:mb-12 px-4">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-[#A78256] mb-3 sm:mb-4 drop-shadow-md">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-[#A78256] mb-3 sm:mb-4" style={{
+          textShadow: "0 4px 12px rgba(0, 0, 0, 0.15), 0 2px 6px rgba(167, 130, 86, 0.3)"
+        }}>
           Our Moments
         </h2>
         
-        <p className="text-xs sm:text-sm md:text-base text-[#B28383] font-light max-w-xl mx-auto leading-relaxed">
+        <p className="text-xs sm:text-sm md:text-base text-[#B28383] font-light max-w-xl mx-auto leading-relaxed" style={{
+          textShadow: "0 2px 8px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(178, 131, 131, 0.2)"
+        }}>
           Every moment, a treasured memory made eternal
         </p>
 

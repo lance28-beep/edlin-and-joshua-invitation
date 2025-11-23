@@ -79,8 +79,8 @@ export function Navbar() {
   return (
     <nav className={`sticky top-0 z-50 transition-all duration-700 ease-out ${
       isScrolled 
-        ? 'bg-[#DDD3CC] backdrop-blur-xl shadow-[0_8px_32px_0_rgba(221,211,204,0.5)] border-b border-[#EDD6AC]/40' 
-        : 'bg-[#DDD3CC]/95 backdrop-blur-lg border-b border-[#EDD6AC]/30'
+        ? 'bg-[#FCF8EC] backdrop-blur-xl shadow-[0_8px_32px_0_rgba(252,248,236,0.5)] border-b border-[#EDD6AC]/40' 
+        : 'bg-[#FCF8EC]/95 backdrop-blur-lg border-b border-[#EDD6AC]/30'
     }`}>
       {/* Elegant glow effect when scrolled */}
       {isScrolled && (
@@ -94,7 +94,7 @@ export function Navbar() {
           <Link href="#home" className="flex-shrink-0 group relative z-10">
             <div className="relative">
               <Image
-                src="/Couple_img/monogram.png"
+                src="/invitation/newMonogram.png"
                 alt="Monogram"
                 width={36}
                 height={36}

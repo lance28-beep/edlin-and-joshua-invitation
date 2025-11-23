@@ -83,7 +83,7 @@ export function Footer() {
 
   return (
     <footer 
-      className="relative z-20 mt-16 text-white overflow-hidden bg-[#DDD3CC]"
+      className="relative z-20 mt-16 text-white overflow-hidden bg-[#FCF8EC]"
     >
       {/* Decorative background elements */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -171,7 +171,7 @@ export function Footer() {
           className="relative"
         >
           <Image
-            src="/Couple_img/monogram.png"
+            src="/invitation/newMonogram.png"
             alt={`${siteConfig.couple.groomNickname} & ${siteConfig.couple.brideNickname} Monogram`}
             width={350}
             height={350}

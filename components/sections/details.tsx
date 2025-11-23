@@ -55,7 +55,7 @@ export function Details() {
   }
 
   return (
-    <Section id="details" className="relative bg-[#DDD3CC] py-10 sm:py-12 md:py-16 lg:py-20 overflow-hidden">
+    <Section id="details" className="relative bg-[#FCF8EC] py-10 sm:py-12 md:py-16 lg:py-20 overflow-hidden">
       {/* Enhanced background elements */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Soft gradient overlays */}
@@ -128,11 +128,15 @@ export function Details() {
           <div className="w-8 sm:w-12 md:w-16 h-px bg-[#A78256]/40" />
         </div>
         
-        <h2 className="imperial-script-regular text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal text-[#A78256] mb-2 sm:mb-3 md:mb-4 drop-shadow-lg">
+        <h2 className="imperial-script-regular text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal text-[#A78256] mb-2 sm:mb-3 md:mb-4" style={{
+          textShadow: "0 4px 12px rgba(0, 0, 0, 0.15), 0 2px 6px rgba(167, 130, 86, 0.3)"
+        }}>
           Event Details
         </h2>
         
-        <p className="text-xs sm:text-sm md:text-base lg:text-lg text-[#B28383] font-light max-w-xl mx-auto leading-relaxed px-2">
+        <p className="text-xs sm:text-sm md:text-base lg:text-lg text-[#B28383] font-light max-w-xl mx-auto leading-relaxed px-2" style={{
+          textShadow: "0 2px 8px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(178, 131, 131, 0.2)"
+        }}>
           Everything you need to know about our special day
         </p>
         
@@ -310,8 +314,12 @@ export function Details() {
       {/* Additional Information */}
       <div className="relative z-10 mb-6 sm:mb-8 max-w-6xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-6 sm:mb-8">
-          <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 text-[#A78256]">Important Information</h3>
-          <p className="text-xs sm:text-sm text-[#B28383]">Everything you need to know</p>
+          <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 text-[#A78256]" style={{
+            textShadow: "0 3px 10px rgba(0, 0, 0, 0.15), 0 1px 4px rgba(167, 130, 86, 0.3)"
+          }}>Important Information</h3>
+          <p className="text-xs sm:text-sm text-[#B28383]" style={{
+            textShadow: "0 2px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(178, 131, 131, 0.2)"
+          }}>Everything you need to know</p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
