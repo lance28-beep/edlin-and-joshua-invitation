@@ -211,26 +211,26 @@ export function Hero() {
             </p>
 
             {/* Featured date layout */}
-            <div className="w-full max-w-4xl mt-4 md:mt-5 lg:mt-6 text-[#F4EDE3]" style={{ textShadow: "0 6px 18px rgba(0,0,0,0.45)" }}>
-              <div className="flex flex-col items-center gap-2.5 sm:gap-3 md:gap-4 lg:gap-5 uppercase">
-                <span className="text-[11px] sm:text-sm md:text-base tracking-[0.75em] sm:tracking-[0.85em]">
+            <div className="w-full max-w-4xl mt-2 sm:mt-3 md:mt-5 lg:mt-6 text-[#F4EDE3]" style={{ textShadow: "0 6px 18px rgba(0,0,0,0.45)" }}>
+              <div className="flex flex-col items-center gap-1.5 sm:gap-3 md:gap-4 lg:gap-5 uppercase">
+                <span className="text-[10px] sm:text-sm md:text-base tracking-[0.45em] sm:tracking-[0.75em]">
                   December
                 </span>
-                <div className="flex w-full items-center gap-3 sm:gap-4 md:gap-6">
-                  <div className="flex flex-1 items-center gap-3 sm:gap-4">
+                <div className="flex w-full items-center gap-2 sm:gap-4 md:gap-6">
+                  <div className="flex flex-1 items-center gap-2 sm:gap-4">
                     <span className="h-[1px] flex-1 bg-white/70" />
-                    <span className="text-[10px] sm:text-xs md:text-sm tracking-[0.55em] sm:tracking-[0.65em]">
+                    <span className="text-[9px] sm:text-xs md:text-sm tracking-[0.35em] sm:tracking-[0.6em]">
                       Monday
                     </span>
                     <span className="h-[1px] w-8 sm:w-10 md:w-12 bg-white/70" />
                   </div>
-                  <div className="relative flex items-center justify-center px-4 sm:px-6 md:px-8 lg:px-10">
+                  <div className="relative flex items-center justify-center px-2 sm:px-4 md:px-8 lg:px-10">
                     <span
                       aria-hidden="true"
-                      className="absolute inset-0 mx-auto h-[80%] max-h-[220px] w-[160px] sm:w-[200px] md:w-[240px] rounded-full bg-gradient-to-b from-[#FFF7DA] via-[#FFE9B0] to-[#F4C680] blur-[38px] opacity-80"
+                      className="absolute inset-0 mx-auto h-[80%] max-h-[220px] w-[120px] sm:w-[180px] md:w-[220px] rounded-full bg-gradient-to-b from-[#FFF7DA] via-[#FFE9B0] to-[#F4C680] blur-[32px] opacity-80"
                     />
                     <span
-                      className="relative font-tiktok text-[3.85rem] sm:text-[4.75rem] md:text-[5.75rem] lg:text-[6.5rem] leading-none tracking-[0.08em]"
+                      className="relative font-tiktok text-[2.85rem] sm:text-[4.25rem] md:text-[5.5rem] lg:text-[6.5rem] leading-none tracking-[0.06em]"
                       style={{
                         color: "#FFF8E1",
                         backgroundImage: "linear-gradient(180deg, #FFFDF4 10%, #FFE6AF 60%, #F5C368 100%)",
@@ -244,25 +244,32 @@ export function Hero() {
                       22
                     </span>
                   </div>
-                  <div className="flex flex-1 items-center gap-3 sm:gap-4 justify-end">
+                  <div className="flex flex-1 items-center gap-2 sm:gap-4 justify-end">
                     <span className="h-[1px] w-8 sm:w-10 md:w-12 bg-white/70" />
-                    <span className="text-[10px] sm:text-xs md:text-sm tracking-[0.35em] sm:tracking-[0.45em]">
+                    <span className="text-[9px] sm:text-xs md:text-sm tracking-[0.28em] sm:tracking-[0.45em]">
                       3:00 PM
                     </span>
                     <span className="h-[1px] flex-1 bg-white/70" />
                   </div>
                 </div>
-                <span className="text-[11px] sm:text-sm md:text-base tracking-[0.65em] sm:tracking-[0.75em]">
+                <span className="text-[10px] sm:text-sm md:text-base tracking-[0.4em] sm:tracking-[0.7em]">
                   2025
                 </span>
               </div>
             </div>
 
+            {/* Ceremony location */}
+            <div className="text-center space-y-1 text-[#F4EDE3] uppercase" style={{ textShadow: "0 6px 18px rgba(0,0,0,0.45)" }}>
+              <p className="text-[10px] sm:text-xs md:text-sm tracking-[0.3em] sm:tracking-[0.35em]">
+                ST. GREGORY THE GREAT CATHEDRAL
+              </p>
+              <p className="text-[9px] sm:text-xs md:text-sm tracking-[0.15em] sm:tracking-[0.2em]">
+                Old Albay District, Legazpi City
+              </p>
+            </div>
+
             {/* Reception */}
             <div className="space-y-1 md:space-y-1.5 text-[#F4EDE3]" style={{ textShadow: "0 6px 18px rgba(0,0,0,0.45)" }}>
-              <p className="text-xs sm:text-base md:text-lg lg:text-xl font-serif italic">
-                Reception to follow at Pepperland Hotel
-              </p>
               <p className="text-[9px] sm:text-xs md:text-sm lg:text-base tracking-[0.12em] md:tracking-[0.16em] lg:tracking-[0.2em] uppercase text-[#F4EDE3]">
                 Airport Road, Washington Drive Ext. · Brgy 40 Cruzada, Legazpi City
               </p>
