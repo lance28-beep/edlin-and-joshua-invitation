@@ -1,5 +1,7 @@
 "use client"
 
+import "@/lib/react-version-polyfill"
+
 import { Suspense } from "react"
 import dynamic from "next/dynamic"
 import { Hero } from "@/components/sections/hero"
@@ -41,15 +43,15 @@ export default function Home() {
         <Countdown />
         <Narrative />
         <Gallery />
-        <Messages />
-        <Details />
         <Entourage />
         <PrincipalSponsors />
+        <Details />
         <GuestList />
         <BookOfGuests />
         <Registry />
-        <FAQ />
         <SnapShare />
+        <Messages />
+        <FAQ />
         <Footer />
       </div>
     </main>

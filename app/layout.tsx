@@ -1,6 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Great_Vibes, Inter, Imperial_Script } from "next/font/google"
+import { Great_Vibes, Inter, Imperial_Script, Lora } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 import { Navbar } from "@/components/navbar"
@@ -8,13 +8,14 @@ import { Navbar } from "@/components/navbar"
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 const greatVibes = Great_Vibes({ subsets: ["latin"], weight: "400", variable: "--font-serif" })
 const imperialScript = Imperial_Script({ subsets: ["latin"], weight: "400", variable: "--font-imperial-script" })
+const lora = Lora({ subsets: ["latin"], variable: "--font-lora" })
 
 export const metadata: Metadata = {
   title: "Edlin Mae & Joshua Jose - Wedding Invitation",
   description:
     "Celebrate the wedding of Edlin Mae B. Cellona and Joshua Jose T. Descalzo on December 22, 2025 at St. Gregory the Great Cathedral, Old Albay District, Legazpi City. RSVP, explore their love story, view the gallery, and send your wishes.",
   keywords:
-    "Edlin Mae Joshua Jose wedding, Legazpi City wedding, St. Gregory the Great Cathedral, Pepperland Hotel reception, rosegold champagne wedding, RSVP, wedding gallery, message wall, love story, #EdlinAndJoshuaWedding",
+    "Edlin Mae Joshua Jose wedding, Legazpi City wedding, St. Gregory the Great Cathedral, Pepperland Hotel reception, rosegold champagne wedding, RSVP, wedding gallery, message wall, love story, #JOSHtheoneforMAE, #MAEforeversiJOSH",
   authors: [
     { name: "Edlin Mae" },
     { name: "Joshua Jose" },
@@ -70,7 +71,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Edlin Mae & Joshua Jose Wedding Invitation",
     description:
-      "You're invited to the wedding of Edlin Mae & Joshua Jose on December 22, 2025. RSVP, explore the gallery, and leave a message! #EdlinAndJoshuaWedding",
+      "You're invited to the wedding of Edlin Mae & Joshua Jose on December 22, 2025. RSVP, explore the gallery, and leave a message! #JOSHtheoneforMAE #MAEforeversiJOSH",
     images: ["https://edlin-and-joshua-invitation.vercel.app/invitation/image.png"],
     creator: "@edlinmae",
   },
@@ -132,7 +133,7 @@ export const metadata: Metadata = {
         price: "0",
         priceCurrency: "PHP",
       },
-      eventHashtag: "#EdlinAndJoshuaWedding",
+      eventHashtag: "#JOSHtheoneforMAE #MAEforeversiJOSH",
     }),
   },
 }
@@ -156,7 +157,7 @@ export default function RootLayout({
         <link rel="preload" as="image" href="/mobile-background/DSCF2614-min.jpg" media="(max-width: 767px)" />
         <link rel="preload" as="image" href="/desktop-background/DSCF2444-min.jpg" media="(min-width: 768px)" />
       </head>
-      <body className={`${inter.variable} ${greatVibes.variable} ${imperialScript.variable} font-inter antialiased text-foreground`}>
+      <body className={`${inter.variable} ${greatVibes.variable} ${imperialScript.variable} ${lora.variable} font-inter antialiased text-foreground`}>
         <Navbar />
         {children}
         <Analytics />

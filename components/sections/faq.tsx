@@ -1,271 +1,92 @@
 "use client"
 
 import { useState } from "react"
-import { ChevronDown } from "lucide-react"
 import { Section } from "@/components/section"
 import { siteConfig } from "@/content/site"
-import Image from "next/image"
+import { ChevronDown, Mail, MapPin, Sparkles } from "lucide-react"
 
-interface FAQItem {
-  question: string
-  answer: string
-}
-
-const faqItems: FAQItem[] = [
-  {
-    question: "When and where is the ceremony?",
-    answer:
-      `The ceremony will be held on Monday, December 22, 2025 at 3:00 PM.\n\nVenue: St. Gregory the Great Cathedral\nLocation: Old Albay District, Legazpi City\n\nGuests are requested to arrive by 2:30 PM.`,
-  },
-  {
-    question: "Where is the reception?",
-    answer:
-      `The reception follows immediately after the ceremony on December 22, 2025.\n\nVenue: Pepperland Hotel\nLocation: Airport Road, Washington Drive Ext., Brgy 40 Cruzada, Legazpi City`,
-  },
-  {
-    question: "What is the dress code?",
-    answer:
-      `Please come in your best formal/semi-formal ensemble\n\nTheme: Romantic Elegance\n\nColor Motif: Old Rose, Rose gold, Blush Pink, Champagne\n\nPrincipal Sponsors:\n• Ninong: Black suit, tie, and white long-sleeve shirt\n• Ninang: Champagne gold long gown\n\nGuests:\n• Ladies: Long Gown/ cocktail dresses\n• Gentlemen: Long Sleeves /Polo and Black slacks.`,
-  },
+const faqs = [
   {
     question: "When is the RSVP deadline?",
-    answer:
-      `Kindly respond on or before the 20th day of November, 2025. Your response helps us finalize our guest list. Thank you!\n\n[RSVP_LINK]Click here to RSVP[/RSVP_LINK]`,
+    answer: `Kindly respond on or before the 28th day of November, 2025. Your response helps us finalize our guest list.\n\nYou can revisit the RSVP section above or send us a note at emaecellona@gmail.com if you have any issues submitting your response.`,
+    icon: Mail,
   },
   {
-    question: "How do I RSVP?",
-    answer:
-      `Please search for your name in the RSVP section above and follow the instructions to confirm your attendance. If you cannot find your name, please contact Edlin Mae Cellona at 09399038910 or email: emaecellona@gmail.com`,
+    question: "Where is the ceremony and what time should we arrive?",
+    answer: `Ceremony: ${siteConfig.ceremony.venue} (${siteConfig.ceremony.location}).\nWe begin at ${siteConfig.ceremony.time}, so please be seated by 2:30 PM to enjoy the full procession.`,
+    icon: MapPin,
   },
   {
-    question: "Do you have a gift registry?",
-    answer:
-      `Your love, laughter and presence on our wedding day are the most precious gifts we could ask for.\n\nShould you wish to bless us further, a monetary gift would be delightful as we begin building our journey as husband and wife.\n\nPlease see the Monetary Gifts section for more information.`,
+    question: "Where is the reception taking place?",
+    answer: `Reception follows immediately at ${siteConfig.reception.venue}, ${siteConfig.reception.location}. Simply follow the signage or ask any member of the entourage for assistance.`,
+    icon: MapPin,
   },
   {
-    question: "Can I bring a plus one?",
-    answer:
-      "We kindly ask that any additional guests be included or declared in your RSVP so we can make the proper arrangements. Thank you so much for your understanding — we can't wait to celebrate together on our special day!",
+    question: "Is there a dress code?",
+    answer: `We're embracing a "${siteConfig.dressCode.theme}" motif. Ladies, gowns or cocktail dresses in romantic hues; gentlemen, long sleeves or suits in classic tones. Most importantly, come comfortable enough to celebrate with us all night!`,
+    icon: Sparkles,
   },
   {
-    question: "What if I have dietary restrictions or allergies?",
-    answer:
-      "Please mention any dietary restrictions, allergies, or special meal requirements in the message field when you submit your RSVP.",
-  },
-  {
-    question: "Is there parking available?",
-    answer:
-      "Yes! Ample parking is available at both the ceremony and reception venues. We recommend arriving 15-20 minutes early to secure a spot.",
-  },
-  {
-    question: "Can I take photos during the ceremony?",
-    answer:
-      "We have a professional photographer, but you're welcome to take photos! We'll have a dedicated time for group photos after the ceremony.",
-  },
-  {
-    question: "What should I do if I need to cancel my RSVP?",
-    answer:
-      "Please contact Edlin Mae Cellona at 09399038910 or email: emaecellona@gmail.com as soon as possible if your plans change. You can also update your RSVP by searching for your name in the RSVP section.",
-  },
-  {
-    question: "Who should I contact if I have questions?",
-    answer:
-      "For any questions or concerns, please contact:\n\nEdlin Mae Cellona\nPhone: 09399038910\nEmail: emaecellona@gmail.com",
+    question: "Can we share photos with you?",
+    answer: `Yes, please! Visit the Snap Share section or upload to our shared Google Drive so we can relive the day through your lens.`,
+    icon: Sparkles,
   },
 ]
 
 export function FAQ() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null)
-
-  const toggleItem = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index)
-  }
+  const [openIndex, setOpenIndex] = useState(0)
 
   return (
     <Section
       id="faq"
-      className="relative bg-[#FCF8EC] py-10 sm:py-12 md:py-16 lg:py-20 overflow-hidden"
+      className="relative bg-[#FCF8EC] py-12 sm:py-16 md:py-20 overflow-hidden after:absolute after:inset-0 after:bg-gradient-to-b after:from-white/40 after:to-transparent"
     >
-      {/* Background image */}
-      <div className="absolute inset-0 pointer-events-none">
-        <Image
-          src="/backgroundimages/background%20(2).jpg"
-          alt=""
-          fill
-          className="object-cover"
-          priority={false}
-        />
-      </div>
-      {/* Enhanced background elements */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {/* Soft gradient overlays */}
-        <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-[#EDD6AC]/20 via-[#EDD6AC]/5 to-transparent" />
-        <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-[#B28383]/20 via-[#B28383]/5 to-transparent" />
-        
-        {/* Floating decorative circles */}
-        <div className="absolute top-10 left-10 w-32 h-32 bg-[#C2D3C3]/15 rounded-full blur-2xl animate-pulse" />
-        <div className="absolute top-20 right-16 w-24 h-24 bg-[#A78256]/12 rounded-full blur-xl animate-pulse" style={{ animationDelay: '1s' }} />
-        <div className="absolute bottom-16 left-20 w-28 h-28 bg-[#B28383]/18 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '2s' }} />
-        <div className="absolute bottom-24 right-12 w-20 h-20 bg-[#EDD6AC]/15 rounded-full blur-xl animate-pulse" style={{ animationDelay: '0.5s' }} />
-        
-        {/* Corner decorations - all four corners */}
-        <div className="absolute top-0 left-0 z-0">
-          <Image
-            src="/decoration/corner_right-top.png"
-            alt=""
-            width={300}
-            height={300}
-            className="w-40 sm:w-52 md:w-64 lg:w-80 xl:w-96 h-auto opacity-75 scale-x-[-1]"
-            priority={false}
-          />
-        </div>
-        
-        <div className="absolute top-0 right-0 z-0">
-          <Image
-            src="/decoration/corner_right-top.png"
-            alt=""
-            width={300}
-            height={300}
-            className="w-40 sm:w-52 md:w-64 lg:w-80 xl:w-96 h-auto opacity-75"
-            priority={false}
-          />
-        </div>
-        
-        <div className="absolute bottom-0 left-0 z-0">
-          <Image
-            src="/decoration/corner_right-top.png"
-            alt=""
-            width={300}
-            height={300}
-            className="w-40 sm:w-52 md:w-64 lg:w-80 xl:w-96 h-auto opacity-75 scale-x-[-1] scale-y-[-1]"
-            priority={false}
-          />
-        </div>
-        
-        <div className="absolute bottom-0 right-0 z-0">
-          <Image
-            src="/decoration/corner_right-top.png"
-            alt=""
-            width={300}
-            height={300}
-            className="w-40 sm:w-52 md:w-64 lg:w-80 xl:w-96 h-auto opacity-75 scale-y-[-1]"
-            priority={false}
-          />
-        </div>
-        
-        {/* Decorative lines */}
-        <div className="absolute top-1/2 left-0 w-full h-px bg-[#A78256]/20" />
-      </div>
-
-      {/* Section Header */}
-      <div className="relative z-10 text-center mb-8 sm:mb-10 md:mb-12 px-3 sm:px-4">
-        {/* Decorative element above title */}
-        <div className="flex items-center justify-center gap-2 mb-3 sm:mb-4">
-          <div className="w-8 sm:w-12 md:w-16 h-px bg-[#A78256]/40" />
-          <div className="w-1.5 h-1.5 bg-[#B28383]/60 rounded-full" />
-          <div className="w-1.5 h-1.5 bg-[#C2D3C3]/60 rounded-full" />
-          <div className="w-1.5 h-1.5 bg-[#B28383]/60 rounded-full" />
-          <div className="w-8 sm:w-12 md:w-16 h-px bg-[#A78256]/40" />
-        </div>
-        
-        <div className="inline-block rounded-2xl bg-white/85 px-4 py-3 shadow-lg backdrop-blur-sm">
-          <h2 className="imperial-script-regular text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal text-[#A78256] mb-2 sm:mb-3 md:mb-4" style={{
-            textShadow: "0 4px 12px rgba(0, 0, 0, 0.15), 0 2px 6px rgba(167, 130, 86, 0.3)"
-          }}>
-            Frequently Asked Questions
+      <div className="relative z-10 max-w-5xl mx-auto">
+        <div className="text-center mb-10 sm:mb-12">
+          <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-[#B28383] mb-3">Frequently Asked</p>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-[#A26C63] mb-4">
+            FAQs
           </h2>
-          
-          <p className="text-xs sm:text-sm md:text-base lg:text-lg text-[#7A4F4F] font-light max-w-xl mx-auto leading-relaxed px-2" style={{
-            textShadow: "0 2px 8px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(178, 131, 131, 0.25)"
-          }}>
-            Everything you need to know
+          <p className="text-sm sm:text-base text-[#73594F] max-w-2xl mx-auto">
+            A quick guide for our guests. If you need more details, please message Edlin Mae at 0939 903 8910.
           </p>
         </div>
-        
-        {/* Decorative element below subtitle */}
-        <div className="flex items-center justify-center gap-2 mt-3 sm:mt-4">
-          <div className="w-1.5 h-1.5 bg-[#B28383]/60 rounded-full" />
-          <div className="w-1.5 h-1.5 bg-[#C2D3C3]/60 rounded-full" />
-          <div className="w-1.5 h-1.5 bg-[#B28383]/60 rounded-full" />
-        </div>
-      </div>
 
-      {/* FAQ content */}
-      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6">
-        {/* Main card */}
-        <div className="relative bg-gradient-to-br from-white/85 via-[#FEF7EC]/90 to-white/80 backdrop-blur-xl border-2 border-white/60 rounded-lg sm:rounded-xl md:rounded-2xl shadow-lg overflow-hidden">
-          {/* Decorative corner accents */}
-          <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-[#C2D3C3]/40 rounded-tl-lg" />
-          <div className="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-[#C2D3C3]/40 rounded-tr-lg" />
-          <div className="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-[#C2D3C3]/40 rounded-bl-lg" />
-          <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-[#C2D3C3]/40 rounded-br-lg" />
-          
-          {/* FAQ items */}
-          <div className="relative p-4 sm:p-5 md:p-6">
-            <div className="space-y-2 sm:space-y-3">
-              {faqItems.map((item, index) => {
-                const isOpen = openIndex === index
-                const contentId = `faq-item-${index}`
-                return (
-                  <div
-                    key={index}
-                    className="rounded-lg sm:rounded-xl border-2 border-[#C2D3C3]/30 bg-white/95 backdrop-blur-sm hover:border-[#A78256]/50 transition-all duration-300 hover:shadow-md overflow-hidden"
-                  >
-                    <button
-                      onClick={() => toggleItem(index)}
-                      className="group w-full px-3 sm:px-4 md:px-5 py-3 sm:py-4 flex items-center justify-between text-left outline-none focus-visible:ring-2 focus-visible:ring-[#A78256]/50 focus-visible:ring-offset-2 transition-colors"
-                      aria-expanded={isOpen}
-                      aria-controls={contentId}
-                    >
-                      <span className="font-semibold text-[#A78256] pr-4 text-sm sm:text-base md:text-lg font-sans leading-relaxed transition-colors duration-200 group-hover:text-[#B28383]" style={{
-                        textShadow: "0 2px 6px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(167, 130, 86, 0.2)"
-                      }}>
-                        {item.question}
-                      </span>
-                      <ChevronDown
-                        size={20}
-                        className={`text-[#A78256]/60 flex-shrink-0 transition-transform duration-300 ${isOpen ? "rotate-180" : ""} sm:w-5 sm:h-5`}
-                        aria-hidden
-                      />
-                    </button>
+        <div className="space-y-4">
+          {faqs.map((item, index) => {
+            const Icon = item.icon ?? Sparkles
+            const isOpen = openIndex === index
 
-                    <div
-                      id={contentId}
-                      role="region"
-                      className={`grid transition-all duration-300 ease-out ${
-                        isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
-                      }`}
-                    >
-                      <div className="overflow-hidden">
-                        <div className="px-3 sm:px-4 md:px-5 py-3 sm:py-4 bg-[#EDD6AC]/20 border-t border-[#C2D3C3]/30">
-                          {item.answer.includes("[RSVP_LINK]") ? (
-                            <p className="text-[#B28383] leading-relaxed text-sm sm:text-base font-sans whitespace-pre-line">
-                              {item.answer.split("[RSVP_LINK]")[0]}
-                              <a 
-                                href="#guest-list" 
-                                className="text-[#A78256] underline font-semibold hover:text-[#B28383] transition-colors"
-                                onClick={(e) => {
-                                  e.preventDefault()
-                                  document.getElementById('guest-list')?.scrollIntoView({ behavior: 'smooth' })
-                                }}
-                              >
-                                {item.answer.match(/\[RSVP_LINK\](.*?)\[\/RSVP_LINK\]/)?.[1]}
-                              </a>
-                              {item.answer.split("[/RSVP_LINK]")[1]}
-                            </p>
-                          ) : (
-                            <p className="text-[#B28383] leading-relaxed text-sm sm:text-base font-sans whitespace-pre-line">
-                              {item.answer}
-                            </p>
-                          )}
-                        </div>
-                      </div>
-                    </div>
+            return (
+              <div
+                key={item.question}
+                className="bg-white/90 backdrop-blur border border-[#E3C6B5] rounded-2xl shadow-sm overflow-hidden transition-shadow hover:shadow-md"
+              >
+                <button
+                  type="button"
+                  onClick={() => setOpenIndex(isOpen ? -1 : index)}
+                  className="w-full flex items-center justify-between gap-4 px-5 sm:px-6 py-4 sm:py-5 text-left"
+                >
+                  <div className="flex items-center gap-3">
+                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#EDD6AC]/70 text-[#8A5A50]">
+                      <Icon className="h-4 w-4" />
+                    </span>
+                    <span className="text-base sm:text-lg font-semibold text-[#7A4D45]">
+                      {item.question}
+                    </span>
                   </div>
-                )
-              })}
-            </div>
-          </div>
+                  <ChevronDown
+                    className={`h-5 w-5 text-[#B28383] transition-transform ${isOpen ? "rotate-180" : "rotate-0"}`}
+                  />
+                </button>
+                {isOpen && (
+                  <div className="px-5 sm:px-6 pb-5 sm:pb-6 text-sm sm:text-base text-[#5C3D2E] whitespace-pre-line border-t border-[#F0DFD2]">
+                    {item.answer}
+                  </div>
+                )}
+              </div>
+            )
+          })}
         </div>
       </div>
     </Section>

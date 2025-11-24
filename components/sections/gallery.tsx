@@ -11,6 +11,16 @@ const galleryItems = [
   { image: "/mobile-background/couple (1).JPG", text: " " },
   { image: "/mobile-background/couple (2).JPEG", text: " " },
   { image: "/mobile-background/couple (2).JPG", text: " " },
+  { image: "/mobile-background/couple (3).JPEG", text: " " },
+  { image: "/mobile-background/couple (3).JPG", text: " " },
+  { image: "/mobile-background/couple (4).JPEG", text: " " },
+  { image: "/mobile-background/couple (4).JPG", text: " " },
+  { image: "/mobile-background/couple (5).JPEG", text: " " },
+  { image: "/mobile-background/couple (5).JPG", text: " " },
+  { image: "/mobile-background/couple (6).JPEG", text: " " },
+  { image: "/mobile-background/couple (6).JPG", text: " " },
+
+
 ]
 
 export function Gallery() {

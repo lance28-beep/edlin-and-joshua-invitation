@@ -273,6 +273,9 @@ export function Hero() {
               <p className="text-[9px] sm:text-xs md:text-sm lg:text-base tracking-[0.12em] md:tracking-[0.16em] lg:tracking-[0.2em] uppercase text-[#F4EDE3]">
                 Airport Road, Washington Drive Ext. · Brgy 40 Cruzada, Legazpi City
               </p>
+              <p className="text-[9px] sm:text-xs md:text-sm lg:text-base tracking-[0.12em] md:tracking-[0.16em] lg:tracking-[0.2em] uppercase text-[#F4EDE3]">
+                Reception to follow at Pepperland Hotel
+              </p>
             </div>
 
             {/* CTA Buttons & download */}

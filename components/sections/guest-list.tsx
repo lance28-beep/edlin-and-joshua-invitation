@@ -290,7 +290,7 @@ export function GuestList() {
         {/* Deadline and Contact Information */}
         <div className="space-y-2 sm:space-y-3 max-w-2xl mx-auto px-2">
           <p className="text-xs sm:text-sm text-white font-light leading-relaxed">
-            Kindly respond on or before the 20th day of November, 2025
+            Kindly respond on or before the 28th day of November, 2025
           </p>
           <p className="text-xs sm:text-sm text-white/90 font-light leading-relaxed">
             concerns : contact Edlin Mae Cellona : 09399038910 or email: emaecellona@gmail.com

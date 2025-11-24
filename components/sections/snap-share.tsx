@@ -9,11 +9,11 @@ import { QRCodeCanvas } from "qrcode.react"
 import { siteConfig } from "@/content/site"
 
 export function SnapShare() {
-  const [copiedHashtag, setCopiedHashtag] = useState(false)
+  const [copiedHashtag, setCopiedHashtag] = useState<string | null>(null)
   const [isMobile, setIsMobile] = useState(false)
 
   const websiteUrl = typeof window !== "undefined" ? window.location.href : "https://example.com"
-  const hashtags = ["#TheBigBANGWedding"]
+  const hashtags = ["#JOSHtheoneforMAE", "#MAEforeversiJOSH"]
   const shareText = `Join us in celebrating our special day! Check out our wedding website: ${websiteUrl} ${hashtags.join(" ")} 💕`
 
   useEffect(() => {
@@ -30,8 +30,8 @@ export function SnapShare() {
   const copyToClipboard = async (text: string) => {
     try {
       await navigator.clipboard.writeText(text)
-      setCopiedHashtag(true)
-      setTimeout(() => setCopiedHashtag(false), 2000)
+      setCopiedHashtag(text)
+      setTimeout(() => setCopiedHashtag(null), 2000)
     } catch (err) {
       console.error("Failed to copy: ", err)
     }
@@ -134,7 +134,7 @@ export function SnapShare() {
                         className="p-1 sm:p-1.5 rounded-full bg-white/90 hover:bg-white transition-colors duration-200 shadow-sm flex-shrink-0 ring-1 ring-[#A78256]/40"
                         title="Copy hashtag"
                       >
-                        {copiedHashtag ? <Check className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#C2D3C3]" /> : <Copy className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#A78256]/60" />}
+                        {copiedHashtag === hashtag ? <Check className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#C2D3C3]" /> : <Copy className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#A78256]/60" />}
                       </button>
                     </div>
                   ))}

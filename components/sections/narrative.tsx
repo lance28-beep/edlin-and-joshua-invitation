@@ -8,11 +8,31 @@ import Image from "next/image"
 
 export function Narrative() {
   return (
-    <Section id="narrative" className="relative py-12 md:py-16 lg:py-20 overflow-hidden bg-gradient-to-b from-[#DDD3CC] via-[#EDD6AC]/60 to-[#DDD3CC]">
+    <Section id="narrative" className="relative bg-[#FCF8EC] py-12 md:py-16 lg:py-20 overflow-hidden">
 
-      {/* Background overlays */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#DDD3CC]/85 via-[#EDD6AC]/70 to-[#DDD3CC]/85 backdrop-blur-md z-10"></div>
-      <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-b from-[#C2D3C3]/20 to-transparent mix-blend-multiply"></div>
+      {/* Background image */}
+      <div className="absolute inset-0 pointer-events-none">
+        <Image
+          src="/backgroundimages/background%20(3).jpg"
+          alt=""
+          fill
+          className="object-cover"
+          priority={false}
+        />
+      </div>
+
+      {/* Enhanced background elements */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {/* Soft gradient overlays */}
+        <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-[#EDD6AC]/20 via-[#EDD6AC]/5 to-transparent" />
+        <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-[#B28383]/20 via-[#B28383]/5 to-transparent" />
+        
+        {/* Floating decorative circles */}
+        <div className="absolute top-10 left-10 w-32 h-32 bg-[#C2D3C3]/15 rounded-full blur-2xl animate-pulse" />
+        <div className="absolute top-20 right-16 w-24 h-24 bg-[#A78256]/12 rounded-full blur-xl animate-pulse" style={{ animationDelay: '1s' }} />
+        <div className="absolute bottom-16 left-20 w-28 h-28 bg-[#B28383]/18 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '2s' }} />
+        <div className="absolute bottom-24 right-12 w-20 h-20 bg-[#EDD6AC]/15 rounded-full blur-xl animate-pulse" style={{ animationDelay: '0.5s' }} />
+      </div>
 
       {/* Corner decorations - bottom corners */}
       <div className="absolute bottom-0 left-0 z-20">
@@ -33,6 +53,29 @@ export function Narrative() {
           width={300}
           height={300}
           className="w-40 sm:w-52 md:w-64 lg:w-80 xl:w-96 h-auto opacity-75 scale-y-[-1]"
+          priority={false}
+        />
+      </div>
+
+      {/* Corner decorations - top corners */}
+      <div className="absolute top-0 left-0 z-20">
+        <Image
+          src="/decoration/corner_right-top.png"
+          alt=""
+          width={300}
+          height={300}
+          className="w-40 sm:w-52 md:w-64 lg:w-80 xl:w-96 h-auto opacity-75 scale-x-[-1]"
+          priority={false}
+        />
+      </div>
+      
+      <div className="absolute top-0 right-0 z-20">
+        <Image
+          src="/decoration/corner_right-top.png"
+          alt=""
+          width={300}
+          height={300}
+          className="w-40 sm:w-52 md:w-64 lg:w-80 xl:w-96 h-auto opacity-75"
           priority={false}
         />
       </div>
@@ -145,14 +188,14 @@ export function Narrative() {
               >
                 {/* First paragraph with drop cap */}
                 {index === 0 ? (
-                  <p className="text-sm md:text-base leading-relaxed text-[#A78256] text-pretty font-sans font-light pl-3 md:pl-6">
+                  <p className="relative text-sm md:text-base leading-relaxed text-[#5C3D2E] text-pretty font-lora font-normal pl-3 md:pl-6 px-4 py-4 bg-[#FFF9F0]/85 rounded-3xl border border-white/40 shadow-lg shadow-black/10 backdrop-blur-[1px]">
                     <span className="float-left text-3xl md:text-5xl lg:text-6xl font-serif font-bold text-[#B28383] leading-none mr-2 mt-1 drop-shadow-md">
                       {paragraph.charAt(0)}
                     </span>
                     {paragraph.slice(1)}
                   </p>
                 ) : (
-                  <p className="text-sm md:text-base leading-relaxed text-[#B28383] text-pretty font-sans font-light pl-3 md:pl-6">
+                  <p className="relative text-sm md:text-base leading-relaxed text-[#5C3D2E] text-pretty font-lora font-normal pl-3 md:pl-6 px-4 py-4 bg-[#FFF9F0]/85 rounded-3xl border border-white/40 shadow-lg shadow-black/10 backdrop-blur-[1px]">
                     {paragraph}
                   </p>
                 )}
