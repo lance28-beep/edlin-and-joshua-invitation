@@ -210,17 +210,52 @@ export function Hero() {
               EXCHANGE VOWS OF MARRIAGE
             </p>
 
-            {/* Date & venue summary */}
-            <div className="space-y-1 md:space-y-1.5 lg:space-y-2 text-[#F4EDE3] mt-2 md:mt-3 lg:mt-4" style={{ textShadow: "0 6px 18px rgba(0,0,0,0.45)" }}>
-              <p className="text-xs sm:text-base md:text-lg lg:text-xl font-semibold tracking-[0.1em] md:tracking-[0.15em] lg:tracking-[0.18em] uppercase">
-                Monday • December 22, 2025
-              </p>
-              <p className="text-[10px] sm:text-sm md:text-base lg:text-lg tracking-[0.12em] md:tracking-[0.16em] lg:tracking-[0.2em] uppercase text-[#F4EDE3]">
-                Ceremony at 3:00 PM · St. Gregory the Great Cathedral
-              </p>
-              <p className="text-[9px] sm:text-xs md:text-sm lg:text-base tracking-[0.1em] md:tracking-[0.14em] lg:tracking-[0.18em] uppercase text-[#F4EDE3]">
-                Old Albay District · Legazpi City
-              </p>
+            {/* Featured date layout */}
+            <div className="w-full max-w-4xl mt-4 md:mt-5 lg:mt-6 text-[#F4EDE3]" style={{ textShadow: "0 6px 18px rgba(0,0,0,0.45)" }}>
+              <div className="flex flex-col items-center gap-2.5 sm:gap-3 md:gap-4 lg:gap-5 uppercase">
+                <span className="text-[11px] sm:text-sm md:text-base tracking-[0.75em] sm:tracking-[0.85em]">
+                  December
+                </span>
+                <div className="flex w-full items-center gap-3 sm:gap-4 md:gap-6">
+                  <div className="flex flex-1 items-center gap-3 sm:gap-4">
+                    <span className="h-[1px] flex-1 bg-white/70" />
+                    <span className="text-[10px] sm:text-xs md:text-sm tracking-[0.55em] sm:tracking-[0.65em]">
+                      Monday
+                    </span>
+                    <span className="h-[1px] w-8 sm:w-10 md:w-12 bg-white/70" />
+                  </div>
+                  <div className="relative flex items-center justify-center px-4 sm:px-6 md:px-8 lg:px-10">
+                    <span
+                      aria-hidden="true"
+                      className="absolute inset-0 mx-auto h-[80%] max-h-[220px] w-[160px] sm:w-[200px] md:w-[240px] rounded-full bg-gradient-to-b from-[#FFF7DA] via-[#FFE9B0] to-[#F4C680] blur-[38px] opacity-80"
+                    />
+                    <span
+                      className="relative font-tiktok text-[3.85rem] sm:text-[4.75rem] md:text-[5.75rem] lg:text-[6.5rem] leading-none tracking-[0.08em]"
+                      style={{
+                        color: "#FFF8E1",
+                        backgroundImage: "linear-gradient(180deg, #FFFDF4 10%, #FFE6AF 60%, #F5C368 100%)",
+                        WebkitBackgroundClip: "text",
+                        backgroundClip: "text",
+                        textShadow:
+                          "0 0 30px rgba(255, 255, 255, 0.85), 0 0 70px rgba(253, 215, 155, 0.7), 0 0 120px rgba(253, 193, 113, 0.55), 0 18px 45px rgba(0,0,0,0.65)",
+                        filter: "drop-shadow(0 0 15px rgba(255, 218, 154, 0.6))",
+                      }}
+                    >
+                      22
+                    </span>
+                  </div>
+                  <div className="flex flex-1 items-center gap-3 sm:gap-4 justify-end">
+                    <span className="h-[1px] w-8 sm:w-10 md:w-12 bg-white/70" />
+                    <span className="text-[10px] sm:text-xs md:text-sm tracking-[0.35em] sm:tracking-[0.45em]">
+                      3:00 PM
+                    </span>
+                    <span className="h-[1px] flex-1 bg-white/70" />
+                  </div>
+                </div>
+                <span className="text-[11px] sm:text-sm md:text-base tracking-[0.65em] sm:tracking-[0.75em]">
+                  2025
+                </span>
+              </div>
             </div>
 
             {/* Reception */}

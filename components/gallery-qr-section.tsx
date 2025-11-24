@@ -16,7 +16,7 @@ export function GalleryQRSection() {
           {/* Capture the Love Image */}
           <div className="relative w-full rounded-xl overflow-hidden shadow-lg">
             <Image
-              src="/Couple_img/Capture the Love.png"
+              src="/Couple_img/Capture the Loves.png"
               alt="Capture the Love"
               width={800}
               height={533}

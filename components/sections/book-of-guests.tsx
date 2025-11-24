@@ -89,6 +89,16 @@ export function BookOfGuests() {
       id="guests" 
       className="relative z-10 bg-[#FCF8EC] py-6 sm:py-12 md:py-16 lg:py-20 overflow-hidden isolate"
     >
+      {/* Background image */}
+      <div className="absolute inset-0 pointer-events-none">
+        <Image
+          src="/backgroundimages/background%20(1).jpg"
+          alt=""
+          fill
+          className="object-cover"
+          priority={false}
+        />
+      </div>
       {/* Enhanced background elements - matching countdown section */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Soft gradient overlays */}
@@ -161,17 +171,19 @@ export function BookOfGuests() {
           <div className="w-6 sm:w-8 md:w-12 h-px bg-[#A78256]/40" />
         </div>
         
-        <h2 className="imperial-script-regular text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-normal text-[#A78256] mb-1 sm:mb-2" style={{
-          textShadow: "0 4px 12px rgba(0, 0, 0, 0.15), 0 2px 6px rgba(167, 130, 86, 0.3)"
-        }}>
-          Book of Guests
-        </h2>
-        
-        <p className="text-[10px] sm:text-xs md:text-sm text-[#B28383] font-light max-w-xl mx-auto leading-snug px-2" style={{
-          textShadow: "0 2px 8px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(178, 131, 131, 0.2)"
-        }}>
-          See who's celebrating with us on our special day
-        </p>
+        <div className="inline-block rounded-2xl bg-white/85 px-4 py-3 shadow-lg backdrop-blur-sm">
+          <h2 className="imperial-script-regular text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-normal text-[#A78256] mb-1 sm:mb-2" style={{
+            textShadow: "0 4px 12px rgba(0, 0, 0, 0.15), 0 2px 6px rgba(167, 130, 86, 0.3)"
+          }}>
+            Book of Guests
+          </h2>
+          
+          <p className="text-[10px] sm:text-xs md:text-sm text-[#7A4F4F] font-light max-w-xl mx-auto leading-snug px-2" style={{
+            textShadow: "0 2px 8px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(178, 131, 131, 0.25)"
+          }}>
+            See who's celebrating with us on our special day
+          </p>
+        </div>
         
         {/* Decorative element below subtitle */}
         <div className="flex items-center justify-center gap-1.5 sm:gap-2 mt-2 sm:mt-3">
@@ -186,7 +198,7 @@ export function BookOfGuests() {
         {/* Stats card */}
         <div className="text-center mb-4 sm:mb-6 md:mb-8 px-3 sm:px-4 md:px-6">
           <div className="relative max-w-3xl mx-auto">
-            <div className="relative bg-[#EDD6AC]/98 backdrop-blur-md border-2 border-[#A78256]/40 rounded-lg sm:rounded-xl p-3 sm:p-4 md:p-6 shadow-[0_8px_32px_rgba(167,130,86,0.12)] overflow-hidden">
+            <div className="relative bg-gradient-to-br from-white/85 via-[#FEF7EC]/90 to-white/80 backdrop-blur-xl border-2 border-white/60 rounded-lg sm:rounded-xl p-3 sm:p-4 md:p-6 shadow-[0_8px_32px_rgba(167,130,86,0.12)] overflow-hidden">
               {/* Decorative corner accents */}
               <div className="absolute top-0 left-0 w-2 h-2 sm:w-3 sm:h-3 border-t-2 border-l-2 border-[#C2D3C3]/40 rounded-tl-lg" />
               <div className="absolute top-0 right-0 w-2 h-2 sm:w-3 sm:h-3 border-t-2 border-r-2 border-[#C2D3C3]/40 rounded-tr-lg" />
@@ -218,7 +230,7 @@ export function BookOfGuests() {
 
         {/* Guest list container */}
         <div className="max-w-5xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
-          <div className="relative bg-[#EDD6AC]/98 backdrop-blur-md border-2 border-[#A78256]/40 rounded-lg sm:rounded-xl p-3 sm:p-4 md:p-6 lg:p-8 shadow-[0_8px_32px_rgba(167,130,86,0.12)] overflow-hidden">
+          <div className="relative bg-gradient-to-br from-white/85 via-[#FEF7EC]/90 to-white/80 backdrop-blur-xl border-2 border-white/60 rounded-lg sm:rounded-xl p-3 sm:p-4 md:p-6 lg:p-8 shadow-[0_8px_32px_rgba(167,130,86,0.12)] overflow-hidden">
             {/* Decorative corner accents */}
             <div className="absolute top-0 left-0 w-2 h-2 sm:w-3 sm:h-3 border-t-2 border-l-2 border-[#C2D3C3]/40 rounded-tl-lg" />
             <div className="absolute top-0 right-0 w-2 h-2 sm:w-3 sm:h-3 border-t-2 border-r-2 border-[#C2D3C3]/40 rounded-tr-lg" />

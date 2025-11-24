@@ -147,6 +147,17 @@ html {
   font-style: normal;
 }
 
+/* TikTok Sans utility class for bold numeric styling */
+.font-tiktok {
+  font-family: "TikTok Sans", "Inter", "Helvetica Neue", Arial, sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0,
+    "wdth" 100;
+}
+
 /* Scrollbar styling */
 ::-webkit-scrollbar {
   width: 8px;

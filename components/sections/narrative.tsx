@@ -46,8 +46,26 @@ export function Narrative() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-primary mb-4 md:mb-6 text-balance drop-shadow-lg tracking-tight">
-            <span className="text-[#A78256]">Our Love Story</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-primary mb-4 md:mb-6 text-balance tracking-tight">
+            <span className="relative inline-flex items-center justify-center px-2 sm:px-3 py-1">
+              <span
+                aria-hidden="true"
+                className="absolute inset-0 mx-auto h-full w-full rounded-full bg-gradient-to-b from-[#FFF6DD] via-[#FFE0B1] to-[#F3AF66] blur-[35px] opacity-80"
+              />
+              <span
+                className="relative text-[#FFF7E3]"
+                style={{
+                  backgroundImage: "linear-gradient(180deg, #FFFBEF 10%, #FFE3B2 60%, #F2AA5A 100%)",
+                  WebkitBackgroundClip: "text",
+                  backgroundClip: "text",
+                  textShadow:
+                    "0 0 28px rgba(255,255,255,0.85), 0 0 60px rgba(255,214,150,0.65), 0 18px 42px rgba(0,0,0,0.55)",
+                  filter: "drop-shadow(0 0 14px rgba(255, 203, 142, 0.55))",
+                }}
+              >
+                Our Love Story
+              </span>
+            </span>
           </h2>
           
           {/* Decorative flourish */}

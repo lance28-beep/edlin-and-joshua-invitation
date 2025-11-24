@@ -38,7 +38,7 @@ export function Registry() {
       {/* Content */}
       <div className="relative z-10 max-w-2xl mx-auto px-4 sm:px-6">
         {/* Note on Gifts */}
-        <div className="relative bg-[#EDD6AC]/98 backdrop-blur-md border-2 border-[#A78256]/40 rounded-lg sm:rounded-xl md:rounded-2xl shadow-lg mb-4 sm:mb-6 overflow-visible">
+        <div className="relative bg-gradient-to-br from-white/85 via-[#FEF7EC]/90 to-white/80 backdrop-blur-xl border-2 border-white/60 rounded-lg sm:rounded-xl md:rounded-2xl shadow-lg mb-4 sm:mb-6 overflow-visible">
           {/* Decorative corner accents */}
           <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-[#C2D3C3]/40 rounded-tl-lg" />
           <div className="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-[#C2D3C3]/40 rounded-tr-lg" />
@@ -63,7 +63,7 @@ export function Registry() {
         </div>
 
         {/* GCash QR Code */}
-        <div className="relative bg-[#EDD6AC]/98 backdrop-blur-md border-2 border-[#A78256]/40 rounded-lg sm:rounded-xl md:rounded-2xl shadow-lg mb-4 sm:mb-6 overflow-visible">
+        <div className="relative bg-gradient-to-br from-white/85 via-[#FEF7EC]/90 to-white/80 backdrop-blur-xl border-2 border-white/60 rounded-lg sm:rounded-xl md:rounded-2xl shadow-lg mb-4 sm:mb-6 overflow-visible">
           {/* Decorative corner accents */}
           <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-[#C2D3C3]/40 rounded-tl-lg" />
           <div className="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-[#C2D3C3]/40 rounded-tr-lg" />

@@ -25,7 +25,7 @@ const faqItems: FAQItem[] = [
   {
     question: "What is the dress code?",
     answer:
-      `Please come in your best formal/semi-formal ensemble\n\nTheme: Romantic Elegance\n\nColor Motif: Old Rose, Rose gold, Blush Pink, Champagne\n\nPrincipal Sponsors:\n• Ninong: Barong\n• Ninang: Modern Filipiniana\n\nGuests:\n• Ladies: Long Gown/ cocktail dresses\n• Gentlemen: Long Sleeves /Polo and Black slacks.`,
+      `Please come in your best formal/semi-formal ensemble\n\nTheme: Romantic Elegance\n\nColor Motif: Old Rose, Rose gold, Blush Pink, Champagne\n\nPrincipal Sponsors:\n• Ninong: Black suit, tie, and white long-sleeve shirt\n• Ninang: Champagne gold long gown\n\nGuests:\n• Ladies: Long Gown/ cocktail dresses\n• Gentlemen: Long Sleeves /Polo and Black slacks.`,
   },
   {
     question: "When is the RSVP deadline?",
@@ -86,6 +86,16 @@ export function FAQ() {
       id="faq"
       className="relative bg-[#FCF8EC] py-10 sm:py-12 md:py-16 lg:py-20 overflow-hidden"
     >
+      {/* Background image */}
+      <div className="absolute inset-0 pointer-events-none">
+        <Image
+          src="/backgroundimages/background%20(2).jpg"
+          alt=""
+          fill
+          className="object-cover"
+          priority={false}
+        />
+      </div>
       {/* Enhanced background elements */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Soft gradient overlays */}
@@ -158,17 +168,19 @@ export function FAQ() {
           <div className="w-8 sm:w-12 md:w-16 h-px bg-[#A78256]/40" />
         </div>
         
-        <h2 className="imperial-script-regular text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal text-[#A78256] mb-2 sm:mb-3 md:mb-4" style={{
-          textShadow: "0 4px 12px rgba(0, 0, 0, 0.15), 0 2px 6px rgba(167, 130, 86, 0.3)"
-        }}>
-          Frequently Asked Questions
-        </h2>
-        
-        <p className="text-xs sm:text-sm md:text-base lg:text-lg text-[#B28383] font-light max-w-xl mx-auto leading-relaxed px-2" style={{
-          textShadow: "0 2px 8px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(178, 131, 131, 0.2)"
-        }}>
-          Everything you need to know
-        </p>
+        <div className="inline-block rounded-2xl bg-white/85 px-4 py-3 shadow-lg backdrop-blur-sm">
+          <h2 className="imperial-script-regular text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal text-[#A78256] mb-2 sm:mb-3 md:mb-4" style={{
+            textShadow: "0 4px 12px rgba(0, 0, 0, 0.15), 0 2px 6px rgba(167, 130, 86, 0.3)"
+          }}>
+            Frequently Asked Questions
+          </h2>
+          
+          <p className="text-xs sm:text-sm md:text-base lg:text-lg text-[#7A4F4F] font-light max-w-xl mx-auto leading-relaxed px-2" style={{
+            textShadow: "0 2px 8px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(178, 131, 131, 0.25)"
+          }}>
+            Everything you need to know
+          </p>
+        </div>
         
         {/* Decorative element below subtitle */}
         <div className="flex items-center justify-center gap-2 mt-3 sm:mt-4">
@@ -181,7 +193,7 @@ export function FAQ() {
       {/* FAQ content */}
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6">
         {/* Main card */}
-        <div className="relative bg-[#EDD6AC]/98 backdrop-blur-md border-2 border-[#A78256]/40 rounded-lg sm:rounded-xl md:rounded-2xl shadow-lg overflow-hidden">
+        <div className="relative bg-gradient-to-br from-white/85 via-[#FEF7EC]/90 to-white/80 backdrop-blur-xl border-2 border-white/60 rounded-lg sm:rounded-xl md:rounded-2xl shadow-lg overflow-hidden">
           {/* Decorative corner accents */}
           <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-[#C2D3C3]/40 rounded-tl-lg" />
           <div className="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-[#C2D3C3]/40 rounded-tr-lg" />

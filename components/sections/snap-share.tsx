@@ -114,7 +114,7 @@ export function SnapShare() {
 
         <motion.div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4" variants={staggerChildren} initial="initial" animate="animate">
           <motion.div
-            className="bg-[#EDD6AC]/95 rounded-xl sm:rounded-2xl shadow-2xl border-2 border-[#A78256]/40 hover:shadow-[0_10px_50px_rgba(167,130,86,0.3)] transition-all duration-300"
+            className="bg-gradient-to-br from-white/85 via-[#FEF7EC]/90 to-white/80 backdrop-blur-xl rounded-xl sm:rounded-2xl shadow-2xl border-2 border-white/60 hover:border-white/80 hover:shadow-[0_10px_50px_rgba(167,130,86,0.3)] transition-all duration-300"
             variants={fadeInUp}
             whileHover={{ y: -2 }}
           >
@@ -162,7 +162,7 @@ export function SnapShare() {
           </motion.div>
 
           <motion.div className="space-y-3 sm:space-y-4" variants={fadeInUp}>
-            <div className="bg-[#EDD6AC]/95 rounded-xl sm:rounded-2xl shadow-2xl border-2 border-[#A78256]/40 hover:shadow-[0_10px_50px_rgba(167,130,86,0.3)] transition-all duration-300">
+            <div className="bg-gradient-to-br from-white/85 via-[#FEF7EC]/90 to-white/80 backdrop-blur-xl rounded-xl sm:rounded-2xl shadow-2xl border-2 border-white/60 hover:border-white/80 hover:shadow-[0_10px_50px_rgba(167,130,86,0.3)] transition-all duration-300">
               <div className="relative p-3 sm:p-4 md:p-5 text-center">
                 {/* Corner accents */}
                 <div className="absolute top-0.5 left-0.5 w-2.5 h-2.5 sm:w-3 sm:h-3 border-t-2 border-l-2 border-[#A78256]/50 rounded-tl-lg" />
@@ -190,7 +190,7 @@ export function SnapShare() {
             </div>
 
             {/* Capture the Love Image */}
-            <div className="bg-[#EDD6AC]/95 rounded-xl sm:rounded-2xl shadow-2xl border-2 border-[#A78256]/40 hover:shadow-[0_10px_50px_rgba(167,130,86,0.3)] transition-all duration-300 overflow-hidden">
+            <div className="bg-gradient-to-br from-white/85 via-[#FEF7EC]/90 to-white/80 backdrop-blur-xl rounded-xl sm:rounded-2xl shadow-2xl border-2 border-white/60 hover:border-white/80 hover:shadow-[0_10px_50px_rgba(167,130,86,0.3)] transition-all duration-300 overflow-hidden">
               <div className="relative p-3 sm:p-4 md:p-5">
                 {/* Corner accents */}
                 <div className="absolute top-0.5 left-0.5 w-2.5 h-2.5 sm:w-3 sm:h-3 border-t-2 border-l-2 border-[#A78256]/50 rounded-tl-lg" />
@@ -200,7 +200,7 @@ export function SnapShare() {
                 
                 <div className="relative w-full rounded-xl overflow-hidden shadow-lg">
                   <Image
-                    src="/Couple_img/Capture the Love.png"
+                    src="/Couple_img/Capture the Loves.png"
                     alt="Capture the Love"
                     width={600}
                     height={400}
@@ -211,7 +211,7 @@ export function SnapShare() {
               </div>
             </div>
 
-            <div className="bg-[#EDD6AC]/95 rounded-xl sm:rounded-2xl shadow-2xl border-2 border-[#A78256]/40 hover:shadow-[0_10px_50px_rgba(167,130,86,0.3)] transition-all duration-300">
+            <div className="bg-gradient-to-br from-white/85 via-[#FEF7EC]/90 to-white/80 backdrop-blur-xl rounded-xl sm:rounded-2xl shadow-2xl border-2 border-white/60 hover:border-white/80 hover:shadow-[0_10px_50px_rgba(167,130,86,0.3)] transition-all duration-300">
               <div className="relative p-3 sm:p-4 md:p-5">
                 {/* Corner accents */}
                 <div className="absolute top-0.5 left-0.5 w-2.5 h-2.5 sm:w-3 sm:h-3 border-t-2 border-l-2 border-[#A78256]/50 rounded-tl-lg" />
@@ -256,7 +256,7 @@ export function SnapShare() {
         </motion.div>
 
         <motion.div className="text-center mt-5 sm:mt-6 md:mt-7" variants={fadeInUp}>
-          <div className="bg-[#EDD6AC]/95 rounded-xl sm:rounded-2xl shadow-2xl border-2 border-[#A78256]/40 hover:shadow-[0_10px_50px_rgba(167,130,86,0.3)] transition-all duration-300 max-w-3xl mx-auto">
+          <div className="bg-gradient-to-br from-white/85 via-[#FEF7EC]/90 to-white/80 backdrop-blur-xl rounded-xl sm:rounded-2xl shadow-2xl border-2 border-white/60 hover:border-white/80 hover:shadow-[0_10px_50px_rgba(167,130,86,0.3)] transition-all duration-300 max-w-3xl mx-auto">
             <div className="relative p-4 sm:p-5 md:p-6">
               {/* Corner accents */}
               <div className="absolute top-0.5 left-0.5 w-2.5 h-2.5 sm:w-3 sm:h-3 border-t-2 border-l-2 border-[#A78256]/50 rounded-tl-lg" />

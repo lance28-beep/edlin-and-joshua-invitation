@@ -37,8 +37,8 @@ export const siteConfig = {
     theme: "Romantic Elegance",
     colors: ["#B76E79", "#F7E7CE", "#FFFFFF"],
     sponsors: {
-      ladies: "Modern Filipiniana",
-      gentlemen: "Barong"
+      ladies: "Champagne gold long gown",
+      gentlemen: "Black suit, tie and white long-sleeve shirt"
     },
     guests: {
       ladies: "Long Gown/ cocktail dresses",

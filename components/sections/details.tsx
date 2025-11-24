@@ -56,6 +56,16 @@ export function Details() {
 
   return (
     <Section id="details" className="relative bg-[#FCF8EC] py-10 sm:py-12 md:py-16 lg:py-20 overflow-hidden">
+      {/* Background image */}
+      <div className="absolute inset-0 pointer-events-none">
+        <Image
+          src="/backgroundimages/background%20(3).jpg"
+          alt=""
+          fill
+          className="object-cover"
+          priority={false}
+        />
+      </div>
       {/* Enhanced background elements */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Soft gradient overlays */}
@@ -128,17 +138,19 @@ export function Details() {
           <div className="w-8 sm:w-12 md:w-16 h-px bg-[#A78256]/40" />
         </div>
         
-        <h2 className="imperial-script-regular text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal text-[#A78256] mb-2 sm:mb-3 md:mb-4" style={{
-          textShadow: "0 4px 12px rgba(0, 0, 0, 0.15), 0 2px 6px rgba(167, 130, 86, 0.3)"
-        }}>
-          Event Details
-        </h2>
-        
-        <p className="text-xs sm:text-sm md:text-base lg:text-lg text-[#B28383] font-light max-w-xl mx-auto leading-relaxed px-2" style={{
-          textShadow: "0 2px 8px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(178, 131, 131, 0.2)"
-        }}>
-          Everything you need to know about our special day
-        </p>
+        <div className="inline-block rounded-2xl bg-white/80 px-4 py-3 shadow-lg backdrop-blur-sm">
+          <h2 className="imperial-script-regular text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal text-[#A78256] mb-2 sm:mb-3 md:mb-4" style={{
+            textShadow: "0 4px 12px rgba(0, 0, 0, 0.15), 0 2px 6px rgba(167, 130, 86, 0.3)"
+          }}>
+            Event Details
+          </h2>
+          
+          <p className="text-xs sm:text-sm md:text-base lg:text-lg text-[#7A4F4F] font-light max-w-xl mx-auto leading-relaxed px-2" style={{
+            textShadow: "0 2px 8px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(178, 131, 131, 0.25)"
+          }}>
+            Everything you need to know about our special day
+          </p>
+        </div>
         
         {/* Decorative element below subtitle */}
         <div className="flex items-center justify-center gap-2 mt-3 sm:mt-4">
@@ -152,7 +164,7 @@ export function Details() {
       <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-5 lg:gap-6 mb-6 sm:mb-8 max-w-6xl mx-auto px-4 sm:px-6">
         {/* Ceremony */}
         <div 
-          className="bg-[#EDD6AC]/98 backdrop-blur-md rounded-lg sm:rounded-xl md:rounded-2xl p-4 sm:p-5 md:p-6 shadow-[0_8px_32px_rgba(167,130,86,0.12)] border-2 border-[#A78256]/40 hover:border-[#A78256]/60 hover:shadow-[0_12px_40px_rgba(167,130,86,0.18)] transition-all duration-300 hover:scale-[1.03] group relative overflow-hidden"
+          className="bg-gradient-to-br from-white/85 via-[#FEF7EC]/90 to-white/80 backdrop-blur-xl rounded-lg sm:rounded-xl md:rounded-2xl p-4 sm:p-5 md:p-6 shadow-[0_8px_32px_rgba(167,130,86,0.12)] border-2 border-white/60 hover:border-white/80 hover:shadow-[0_12px_40px_rgba(167,130,86,0.2)] transition-all duration-300 hover:scale-[1.03] group relative overflow-hidden"
           onMouseEnter={() => setHoveredCard('ceremony')}
           onMouseLeave={() => setHoveredCard(null)}
         >
@@ -232,7 +244,7 @@ export function Details() {
 
         {/* Reception */}
         <div 
-          className="bg-[#EDD6AC]/98 backdrop-blur-md rounded-lg sm:rounded-xl md:rounded-2xl p-4 sm:p-5 md:p-6 shadow-[0_8px_32px_rgba(167,130,86,0.12)] border-2 border-[#A78256]/40 hover:border-[#A78256]/60 hover:shadow-[0_12px_40px_rgba(167,130,86,0.18)] transition-all duration-300 hover:scale-[1.03] group relative overflow-hidden"
+          className="bg-gradient-to-br from-white/85 via-[#FEF7EC]/90 to-white/80 backdrop-blur-xl rounded-lg sm:rounded-xl md:rounded-2xl p-4 sm:p-5 md:p-6 shadow-[0_8px_32px_rgba(167,130,86,0.12)] border-2 border-white/60 hover:border-white/80 hover:shadow-[0_12px_40px_rgba(167,130,86,0.2)] transition-all duration-300 hover:scale-[1.03] group relative overflow-hidden"
           onMouseEnter={() => setHoveredCard('reception')}
           onMouseLeave={() => setHoveredCard(null)}
         >
@@ -314,17 +326,19 @@ export function Details() {
       {/* Additional Information */}
       <div className="relative z-10 mb-6 sm:mb-8 max-w-6xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-6 sm:mb-8">
-          <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 text-[#A78256]" style={{
-            textShadow: "0 3px 10px rgba(0, 0, 0, 0.15), 0 1px 4px rgba(167, 130, 86, 0.3)"
-          }}>Important Information</h3>
-          <p className="text-xs sm:text-sm text-[#B28383]" style={{
-            textShadow: "0 2px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(178, 131, 131, 0.2)"
-          }}>Everything you need to know</p>
+          <div className="inline-block rounded-2xl bg-white/80 px-4 py-3 shadow-lg backdrop-blur-sm">
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 text-[#A78256]" style={{
+              textShadow: "0 3px 10px rgba(0, 0, 0, 0.15), 0 1px 4px rgba(167, 130, 86, 0.3)"
+            }}>Important Information</h3>
+            <p className="text-xs sm:text-sm text-[#7A4F4F]" style={{
+              textShadow: "0 2px 6px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(178, 131, 131, 0.25)"
+            }}>Everything you need to know</p>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
           {/* Dress Code */}
-          <div className="bg-[#EDD6AC]/98 backdrop-blur-md rounded-xl p-4 sm:p-5 border-2 border-[#A78256]/40 hover:border-[#A78256]/60 hover:shadow-lg transition-all duration-300 hover:scale-[1.02] group relative overflow-hidden">
+          <div className="bg-gradient-to-br from-white/85 via-[#FEF7EC]/90 to-white/80 backdrop-blur-xl rounded-xl p-4 sm:p-5 border-2 border-white/60 hover:border-white/80 hover:shadow-lg transition-all duration-300 hover:scale-[1.02] group relative overflow-hidden">
             <div className="absolute top-0 right-0 w-32 h-32 rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" style={{ backgroundColor: '#D8B0B0', opacity: 0.15 }} />
             <div className="flex items-center gap-1.5 sm:gap-2 mb-4 relative z-10">
               <div className="p-2 rounded-full shadow-md" style={{ backgroundColor: '#D8B0B0', opacity: 0.3 }}>
@@ -395,7 +409,7 @@ export function Details() {
           </div>
 
           {/* Travel & Comfort - Combined */}
-          <div className="bg-[#EDD6AC]/98 backdrop-blur-md rounded-xl p-4 sm:p-5 border-2 border-[#A78256]/40 hover:border-[#A78256]/60 hover:shadow-lg transition-all duration-300 hover:scale-[1.02] group relative overflow-hidden">
+          <div className="bg-gradient-to-br from-white/85 via-[#FEF7EC]/90 to-white/80 backdrop-blur-xl rounded-xl p-4 sm:p-5 border-2 border-white/60 hover:border-white/80 hover:shadow-lg transition-all duration-300 hover:scale-[1.02] group relative overflow-hidden">
             <div className="absolute top-0 right-0 w-32 h-32 rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" style={{ backgroundColor: '#AFC8E6', opacity: 0.1 }} />
             <div className="flex items-center gap-1.5 sm:gap-2 mb-4 relative z-10">
               <div className="p-2 rounded-full shadow-md" style={{ backgroundColor: '#AFC8E6', opacity: 0.3 }}>

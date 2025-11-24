@@ -24,6 +24,12 @@ export function Countdown() {
   const targetTimestamp = Number.isNaN(parsedTargetDate.getTime())
     ? Date.UTC(2026, 0, 23, 8, 0, 0)
     : parsedTargetDate.getTime()
+  const ceremonyDayName =
+    siteConfig.ceremony.day ||
+    parsedTargetDate.toLocaleDateString("en-US", { weekday: "long" })
+  const ceremonyMonthDisplay = ceremonyMonth.toUpperCase()
+  const ceremonyDayDisplay = (ceremonyDayName || "").toUpperCase()
+  const ceremonyTimeStyled = ceremonyTimeDisplay.toUpperCase()
 
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({
     days: 0,
@@ -97,6 +103,10 @@ export function Countdown() {
               }}
               counterStyle={{
                 fontSize: "clamp(26px, 5.5vw, 48px)",
+                fontFamily: "'TikTok Sans', 'Inter', 'Helvetica Neue', Arial, sans-serif",
+                fontWeight: 900,
+                fontVariationSettings: "'slnt' 0, 'wdth' 100",
+                letterSpacing: "0.04em",
               }}
             />
           </div>
@@ -264,92 +274,62 @@ export function Countdown() {
               </div>
             </div>
 
-            {/* Save The Date Card */}
+            {/* Save The Date - integrated minimalist layout */}
             <div className="relative">
               <div className="flex justify-center">
-                <div className="max-w-2xl w-full">
-                  {/* Save The Date Header */}
-                  <div className="text-center mb-6 sm:mb-8 md:mb-10">
-                    {/* Decorative divider */}
-                    <div className="flex items-center justify-center gap-2 sm:gap-3 mb-3 sm:mb-4">
-                      <div className="flex items-center gap-1.5">
-                        <div className="w-1 h-1 bg-[#B28383]/70 rounded-full" />
-                        <div className="w-1.5 h-1.5 bg-[#A78256]/90 rounded-full" />
-                        <div className="w-1 h-1 bg-[#B28383]/70 rounded-full" />
-                      </div>
+                <div className="w-full max-w-3xl px-2 sm:px-4">
+                  <div className="flex flex-col items-center gap-3 text-center text-[#A57262]" style={{ textShadow: "0 4px 12px rgba(0,0,0,0.15)" }}>
+                    <div className="flex items-center gap-2">
+                      <span className="h-px w-10 sm:w-12 lg:w-16 bg-gradient-to-r from-transparent via-[#C8A892]/60 to-[#A57262]/40" />
+                      <span className="text-[10px] sm:text-xs md:text-sm uppercase tracking-[0.45em] sm:tracking-[0.55em]">
+                        Save The Date
+                      </span>
+                      <span className="h-px w-10 sm:w-12 lg:w-16 bg-gradient-to-l from-transparent via-[#C8A892]/60 to-[#A57262]/40" />
                     </div>
-                    
-                    {/* Save The Date text */}
-                    <p className="text-xs sm:text-sm md:text-base lg:text-lg font-sans font-semibold text-[#A78256] uppercase tracking-[0.25em] sm:tracking-[0.35em] mb-3 sm:mb-4" style={{
-                      textShadow: "0 2px 8px rgba(0, 0, 0, 0.15), 0 1px 4px rgba(167, 130, 86, 0.3)"
-                    }}>
-                      Save The Date
-                    </p>
-                    
-                    {/* Bottom decorative divider */}
-                    <div className="flex items-center justify-center gap-1.5">
-                      <div className="w-1 h-1 bg-[#B28383]/70 rounded-full" />
-                      <div className="w-1.5 h-1.5 bg-[#A78256]/90 rounded-full" />
-                      <div className="w-1 h-1 bg-[#B28383]/70 rounded-full" />
-                    </div>
+                    <span className="text-[10px] sm:text-xs tracking-[0.35em] uppercase text-[#B68C79]">
+                      {siteConfig.ceremony.location}
+                    </span>
                   </div>
 
-                  {/* Date Section - Elegant Layout with decorative card */}
-                  <div className="relative sm:rounded-3xl p-6 sm:p-8 md:p-10 mb-6 sm:mb-8">
-                    <div className="text-center">
-                      {/* Month - Elegant script style */}
-                      <div className="mb-5 sm:mb-6 md:mb-8">
-                        <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif italic text-[#B28383] leading-none" style={{
-                          fontFamily: "var(--font-serif)",
-                          fontStyle: "italic",
-                          fontWeight: 300,
-                          textShadow: "0 3px 10px rgba(0, 0, 0, 0.15), 0 1px 4px rgba(178, 131, 131, 0.3)"
-                        }}>
-                          {ceremonyMonth}
-                        </p>
+                  <div className="relative mt-5 flex flex-col items-center gap-2 uppercase text-[#A57262]" style={{ textShadow: "0 6px 18px rgba(0,0,0,0.2)" }}>
+                    <span className="text-[11px] sm:text-sm md:text-base tracking-[0.65em] sm:tracking-[0.75em]">
+                      {ceremonyMonthDisplay}
+                    </span>
+                    <div className="flex w-full flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 md:gap-5">
+                      <div className="order-2 sm:order-1 flex w-full sm:flex-1 items-center justify-center gap-2 sm:gap-3 text-[10px] sm:text-xs tracking-[0.4em]">
+                        <span className="hidden sm:block h-px flex-1 bg-[#B7836F]/50" />
+                        <span>{ceremonyDayDisplay || "SUNDAY"}</span>
+                        <span className="hidden sm:block h-px w-8 bg-[#B7836F]/50" />
                       </div>
-                      
-                      {/* Day and Year - Horizontal layout with divider */}
-                      <div className="flex items-center justify-center gap-4 sm:gap-5 md:gap-7 mb-5 sm:mb-6 md:mb-8">
-                         {/* Day - Large and bold focal point */}
-                         <p className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[10rem] font-serif font-bold text-[#A78256] leading-none" style={{
-                           textShadow: "0 6px 24px rgba(0, 0, 0, 0.2), 0 2px 8px rgba(167, 130, 86, 0.4), 0 1px 4px rgba(178, 131, 131, 0.3)"
-                         }}>
-                           {ceremonyDayNumber.padStart(2, "0")}
-                         </p>
-                        
-                         {/* Elegant vertical divider */}
-                         <div className="relative h-14 sm:h-16 md:h-20 lg:h-24 flex flex-col items-center justify-center gap-2">
-                           <div className="w-1.5 h-1.5 bg-[#B28383]/70 rounded-full" />
-                           <div className="flex-1 w-px bg-gradient-to-b from-[#B28383]/60 via-[#A78256]/90 to-[#B28383]/60" />
-                           <div className="w-1.5 h-1.5 bg-[#B28383]/70 rounded-full" />
-                         </div>
-                        
-                        {/* Year - Elegant and refined */}
-                        <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-light text-[#B28383] leading-none" style={{
-                          textShadow: "0 3px 10px rgba(0, 0, 0, 0.15), 0 1px 4px rgba(178, 131, 131, 0.3)"
-                        }}>
-                          {ceremonyYear}
-                        </p>
+                      <div className="order-1 sm:order-2 relative flex items-center justify-center px-3 sm:px-4 md:px-6">
+                        <span
+                          aria-hidden="true"
+                          className="absolute inset-0 mx-auto h-[70%] max-h-[180px] w-[130px] sm:w-[170px] md:w-[210px] rounded-full bg-gradient-to-b from-[#FFF6DD] via-[#FFE0B1] to-[#F3AF66] blur-[38px] opacity-80"
+                        />
+                        <span
+                          className="relative font-tiktok text-[3.3rem] sm:text-[4.25rem] md:text-[5rem] leading-none tracking-[0.08em]"
+                          style={{
+                            color: "#FFF7E3",
+                            backgroundImage: "linear-gradient(180deg, #FFFBEF 10%, #FFE3B2 60%, #F2AA5A 100%)",
+                            WebkitBackgroundClip: "text",
+                            backgroundClip: "text",
+                            textShadow:
+                              "0 0 28px rgba(255,255,255,0.85), 0 0 60px rgba(255,214,150,0.65), 0 18px 42px rgba(0,0,0,0.55)",
+                            filter: "drop-shadow(0 0 14px rgba(255, 203, 142, 0.55))",
+                          }}
+                        >
+                          {ceremonyDayNumber.padStart(2, "0")}
+                        </span>
                       </div>
-                      
-                      {/* Time Section with decorative frame */}
-                      <div className="relative pt-4 sm:pt-5 border-t border-[#A78256]/30">
-                         {/* Decorative element above time */}
-                         <div className="flex items-center justify-center gap-2 mb-3 sm:mb-4">
-                           <div className="w-1 h-1 bg-[#B28383]/70 rounded-full" />
-                           <div className="w-1.5 h-1.5 bg-[#A78256]/90 rounded-full" />
-                           <div className="w-1 h-1 bg-[#B28383]/70 rounded-full" />
-                         </div>
-                         
-                         {/* Time */}
-                         <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-sans font-semibold text-[#A78256] tracking-wider" style={{
-                           textShadow: "0 2px 8px rgba(0, 0, 0, 0.15), 0 1px 4px rgba(167, 130, 86, 0.3)"
-                         }}>
-                           {ceremonyTimeDisplay}
-                         </p>
+                      <div className="order-3 flex w-full sm:flex-1 items-center justify-center gap-2 sm:gap-3 text-[10px] sm:text-xs tracking-[0.35em]">
+                        <span className="hidden sm:block h-px w-8 bg-[#B7836F]/50" />
+                        <span>{ceremonyTimeStyled}</span>
+                        <span className="hidden sm:block h-px flex-1 bg-[#B7836F]/50" />
                       </div>
                     </div>
+                    <span className="text-[11px] sm:text-sm md:text-base tracking-[0.6em] sm:tracking-[0.7em] text-[#B68C79]">
+                      {ceremonyYear}
+                    </span>
                   </div>
                 </div>
               </div>
