@@ -3,13 +3,14 @@
 import { useEffect, useState } from "react"
 import Image from "next/image"
 import { motion } from "motion/react"
-import { Instagram, Facebook, Twitter, Share2, Copy, Check, Download } from "lucide-react"
+import { Instagram, Facebook, Twitter, Share2, Copy, Check, Download, ExternalLink } from "lucide-react"
 import { Section } from "@/components/section"
 import { QRCodeCanvas } from "qrcode.react"
 import { siteConfig } from "@/content/site"
 
 export function SnapShare() {
   const [copiedHashtag, setCopiedHashtag] = useState<string | null>(null)
+  const [copiedLink, setCopiedLink] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
 
   const websiteUrl = typeof window !== "undefined" ? window.location.href : "https://example.com"
@@ -61,6 +62,25 @@ export function SnapShare() {
     link.download = "wedding-qr.png"
     link.href = canvas.toDataURL("image/png")
     link.click()
+  }
+
+  const downloadDriveQRCode = () => {
+    const canvas = document.getElementById("drive-qr") as HTMLCanvasElement | null
+    if (!canvas) return
+    const link = document.createElement("a")
+    link.download = "google-drive-qr.png"
+    link.href = canvas.toDataURL("image/png")
+    link.click()
+  }
+
+  const copyDriveLink = async () => {
+    try {
+      await navigator.clipboard.writeText(siteConfig.snapShare.googleDriveLink)
+      setCopiedLink(true)
+      setTimeout(() => setCopiedLink(false), 2000)
+    } catch (err) {
+      console.error("Failed to copy: ", err)
+    }
   }
 
   const fadeInUp = {
@@ -189,16 +209,16 @@ export function SnapShare() {
               </div>
             </div>
 
-            {/* Capture the Love Image */}
-            <div className="bg-gradient-to-br from-white/85 via-[#FEF7EC]/90 to-white/80 backdrop-blur-xl rounded-xl sm:rounded-2xl shadow-2xl border-2 border-white/60 hover:border-white/80 hover:shadow-[0_10px_50px_rgba(167,130,86,0.3)] transition-all duration-300 overflow-hidden">
-              <div className="relative p-3 sm:p-4 md:p-5">
+            {/* Upload Your Photos & Videos Section */}
+            <div className="bg-gradient-to-br from-white/85 via-[#FEF7EC]/90 to-white/80 backdrop-blur-xl rounded-xl sm:rounded-2xl shadow-2xl border-2 border-white/60 hover:border-white/80 hover:shadow-[0_10px_50px_rgba(167,130,86,0.3)] transition-all duration-300">
+              <div className="relative p-3 sm:p-4 md:p-5 text-center">
                 {/* Corner accents */}
                 <div className="absolute top-0.5 left-0.5 w-2.5 h-2.5 sm:w-3 sm:h-3 border-t-2 border-l-2 border-[#A78256]/50 rounded-tl-lg" />
                 <div className="absolute top-0.5 right-0.5 w-2.5 h-2.5 sm:w-3 sm:h-3 border-t-2 border-r-2 border-[#A78256]/50 rounded-tr-lg" />
                 <div className="absolute bottom-0.5 left-0.5 w-2.5 h-2.5 sm:w-3 sm:h-3 border-b-2 border-l-2 border-[#A78256]/50 rounded-bl-lg" />
                 <div className="absolute bottom-0.5 right-0.5 w-2.5 h-2.5 sm:w-3 sm:h-3 border-b-2 border-r-2 border-[#A78256]/50 rounded-br-lg" />
                 
-                <div className="relative w-full rounded-xl overflow-hidden shadow-lg">
+                <div className="relative w-full rounded-xl overflow-hidden shadow-lg mb-3 sm:mb-4">
                   <Image
                     src="/Couple_img/Capture the Loves.png"
                     alt="Capture the Love"
@@ -208,6 +228,56 @@ export function SnapShare() {
                     priority={false}
                   />
                 </div>
+                
+                {/* <div className="mx-auto inline-flex flex-col items-center bg-white p-3 sm:p-4 rounded-xl shadow-md border-2 border-[#A78256]/20 mb-3 sm:mb-4">
+                  <div className="mb-2 sm:mb-2.5 p-1.5 sm:p-2 rounded-lg bg-gradient-to-br from-[#C2D3C3]/40 via-[#FFFFFF]/40 to-white ring-1 ring-[#A78256]/40">
+                    <div className="bg-white p-1.5 sm:p-2 rounded-md shadow-sm">
+                      <QRCodeCanvas id="drive-qr" value={siteConfig.snapShare.googleDriveLink} size={isMobile ? 100 : 140} includeMargin className="bg-white" />
+                    </div>
+                  </div>
+                </div> */}
+
+                {/* <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-2.5 mb-2 sm:mb-3">
+                  <button
+                    onClick={downloadDriveQRCode}
+                    className="flex items-center gap-1.5 sm:gap-2 px-3 py-1.5 sm:py-2 rounded-lg transition-colors duration-200 shadow-sm hover:shadow-md text-[10px] sm:text-xs md:text-sm bg-gradient-to-r from-[#C2D3C3] to-[#B28383] text-white w-full sm:w-auto"
+                  >
+                    <Download className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
+                    <span className="font-lora">Download</span>
+                  </button>
+                  <button
+                    onClick={copyDriveLink}
+                    className="flex items-center gap-1.5 sm:gap-2 px-3 py-1.5 sm:py-2 rounded-lg transition-colors duration-200 shadow-sm hover:shadow-md text-[10px] sm:text-xs md:text-sm bg-gradient-to-r from-[#EDD6AC] to-[#C2D3C3] text-[#A78256] w-full sm:w-auto"
+                  >
+                    {copiedLink ? (
+                      <>
+                        <Check className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
+                        <span className="font-lora">Copied!</span>
+                      </>
+                    ) : (
+                      <>
+                        <Copy className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
+                        <span className="font-lora">Copy Link</span>
+                      </>
+                    )}
+                  </button>
+                </div> */}
+
+                <div className="flex items-center justify-center gap-2 mb-1 sm:mb-1.5">
+                  <div className="h-px flex-1 bg-[#A78256]/20" />
+                  <span className="font-lora text-[#B28383] text-[9px] sm:text-[10px] md:text-xs">or</span>
+                  <div className="h-px flex-1 bg-[#A78256]/20" />
+                </div>
+
+                <a
+                  href={siteConfig.snapShare.googleDriveLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1.5 sm:py-2 rounded-lg transition-colors duration-200 shadow-sm hover:shadow-md text-[10px] sm:text-xs md:text-sm bg-gradient-to-r from-[#A78256] to-[#B28383] text-white hover:opacity-90"
+                >
+                  <ExternalLink className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
+                  <span className="font-lora">Open Google Drive Folder</span>
+                </a>
               </div>
             </div>
 

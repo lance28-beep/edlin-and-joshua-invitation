@@ -53,7 +53,7 @@ She remembered him as the playful guy who took being a ninja a little too seriou
 Years later, in medical school, fate brought them together again. On orientation day, she found herself sitting beside a group of friends that included the guy she had always remembered, the one who once had a crush on her classmate, and the guy who showed up at graduation wearing shades at night, with a patch on his cheek, because he was a little reckless. 🤪
 And during this time in medical school, he somehow became this torpe guy all over again, quietly nursing a crush on yet another one of their classmates, pretending to be cool while low-key avoiding eye contact. But life had other plans. What began as random hangouts, shared lunch breaks, group study sessions, spontaneous trips, and those unexpected moments when everyone just happened to be free, slowly pulled the two of them closer. Somewhere between laughter, late-night chats, and “tara, labas tayo,” their connection started to shift.
 
-What started as casual hangouts soon became a rhythm of shared days and late nights: study sessions, beach trips, road trips, hikes, and countless 7-Eleven ice cream runs. Somewhere between his mint tea deliveries and their endless conversations, their friendship deepened into a bond that felt natural, comforting, and rare.
+What started as casual hangouts soon became a rhythm of shared days and late nights: study sessions, beach trips, road trips, hikes, and countless 7-Eleven ice cream runs. Somewhere between his milk tea deliveries and their endless conversations, their friendship deepened into a bond that felt natural, comforting, and rare.
 
 But their story wasn’t without twists. When she learned he had fallen for her, it shook the foundation of the friendship she treasured most. Unsure and overwhelmed, she stepped back, afraid to lose the one person who made her feel at ease. Yet distance only clarified what both hearts already knew: their connection had grown into something more than friendship. Slowly, carefully, they found their way back to each other.
 
@@ -67,7 +67,7 @@ Today, they walk forward, hand in hand, ready for a lifetime of laughter, healin
     secondary: "#F7E7CE",
   },
   snapShare: {
-    googleDriveLink: "https://drive.google.com/drive/folders/11ox0BQIZRw7TKwMM_tWK8a68lqM801lw?usp=sharing",
+    googleDriveLink: "https://drive.google.com/drive/folders/1yEEeTCacc0ljjWQs12RVGXY3oHIxnD5N?fbclid=IwY2xjawOR80NleHRuA2FlbQIxMABicmlkETFFQ2VmU2M0QnZhNExjemVqc3J0YwZhcHBfaWQPNTE0NzcxNTY5MjI4MDYxAAEeldLXoZ_fKqfJFTMf2OS-UCTc-66dmdGh2hIh75Xm9KgfO3PF7RFrJtOTqqc_aem__KHhtHOtyiUWObrme5OVww",
     instructions: "Please scan this QR Code, create a folder with your name and upload the photos and videos you have taken during our wedding reception. We are delighted to see your snaps too!",
   },
 }

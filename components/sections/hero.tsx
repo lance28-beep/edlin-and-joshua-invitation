@@ -264,17 +264,23 @@ export function Hero() {
                 ST. GREGORY THE GREAT CATHEDRAL
               </p>
               <p className="text-[9px] sm:text-xs md:text-sm tracking-[0.15em] sm:tracking-[0.2em]">
-                Old Albay District, Legazpi City
+                Old Albay District, Legaspi City
               </p>
             </div>
 
             {/* Reception */}
-            <div className="space-y-1 md:space-y-1.5 text-[#F4EDE3]" style={{ textShadow: "0 6px 18px rgba(0,0,0,0.45)" }}>
+            <div className="space-y-1 md:space-y-1.5 text-center text-[#F4EDE3]" style={{ textShadow: "0 6px 18px rgba(0,0,0,0.45)" }}>
               <p className="text-[9px] sm:text-xs md:text-sm lg:text-base tracking-[0.12em] md:tracking-[0.16em] lg:tracking-[0.2em] uppercase text-[#F4EDE3]">
-                Airport Road, Washington Drive Ext. · Brgy 40 Cruzada, Legazpi City
+                Reception to follow at
               </p>
               <p className="text-[9px] sm:text-xs md:text-sm lg:text-base tracking-[0.12em] md:tracking-[0.16em] lg:tracking-[0.2em] uppercase text-[#F4EDE3]">
-                Reception to follow at Pepperland Hotel
+                PEPPERLAND HOTEL
+              </p>
+              <p className="text-[9px] sm:text-xs md:text-sm lg:text-base tracking-[0.12em] md:tracking-[0.16em] lg:tracking-[0.2em] uppercase text-[#F4EDE3]">
+                Airport Road, Washington drive Ext.
+              </p>
+              <p className="text-[9px] sm:text-xs md:text-sm lg:text-base tracking-[0.12em] md:tracking-[0.16em] lg:tracking-[0.2em] uppercase text-[#F4EDE3]">
+                Brgy 40 Cruzada, Legaspi City
               </p>
             </div>
 

@@ -26,7 +26,7 @@ export default function Home() {
   const enableDecor = process.env.NEXT_PUBLIC_ENABLE_DECOR !== 'false'
 
   return (
-    <main className="relative">
+    <main className="relative min-h-screen flex flex-col">
       {enableDecor && <BackgroundMusic />}
       {/* Silk Background Animation */}
       {enableDecor && (
@@ -38,7 +38,7 @@ export default function Home() {
       )}
 
       {/* Content */}
-      <div className="relative z-10">
+      <div className="relative z-10 flex-1">
         <Hero />
         <Countdown />
         <Narrative />
